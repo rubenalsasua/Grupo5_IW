@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <h2>Todos los proyectos</h2>
+    <h3>{{ proyecto.nombre }}</h3>
+    {% if proyecto %}
+        <ul>
+            {% for proyecto in proyecto %}
+                <li><a href="{% url ''  %}">{{ proyecto.nombre }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay ningun proyecto</p>
+    {% endif %}
+{% endblock %}
