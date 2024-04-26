@@ -1,6 +1,6 @@
 from django import forms
 
-from appDeustotil_Tech.models import Proyecto,Empleado,Tareas
+from appDeustotil_Tech.models import Proyecto,Empleado,Tarea
 
 class ProyectoForm(forms.ModelForm):
     class Meta:
@@ -14,7 +14,7 @@ class EmpleadoForm(forms.ModelForm):
         fields = '__all__'
 
 
-class TareasForm(forms.ModelForm):
+class TareaForm(forms.ModelForm):
     class Meta:
-        model = Tareas
+        model = Tarea
         fields = '__all__'
