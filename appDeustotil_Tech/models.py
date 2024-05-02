@@ -9,6 +9,7 @@ class Empleado(models.Model):
     apellido = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     telefono = models.IntegerField(max_length=100)
+    imagen = models.CharField(max_length=300, default = False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -29,6 +30,7 @@ class Proyecto(models.Model):
     presupuesto = models.IntegerField()
     datos_cliente = models.TextField(max_length=100)
     jefe_proyecto = models.ForeignKey(Empleado, on_delete=models.CASCADE)
+    imagen = models.CharField(max_length=300, default = False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <h2>Todos los empleados</h2>
+    {% if empleado %}
+        <ul>
+            {% for empleado in empleado %}
+
+                <img src="{{ empleado.imagen }}">
+                <h3>{{ empleado.nombre }} {{empleado.apellido}}</h3>
+
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay ningun empleado</p>
+    {% endif %}
+{% endblock %}
