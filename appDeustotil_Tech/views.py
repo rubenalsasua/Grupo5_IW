@@ -61,6 +61,13 @@ class TareaListView(ListView):
     template_name = 'appDeustotil_Tech/tarea_list.html'
     context_object_name = 'tarea'
 
+class TareaDetailView(DetailView):
+    model = Tarea
+    template_name = 'appDeustotil_Tech/tarea_detail.html'
+    context_object_name = 'tarea'
+
+
+
 
 
 

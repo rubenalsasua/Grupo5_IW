@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+    <h2> Detalle de la tarea</h2>
+    {% if tarea %}
+        <ul>
+           <li>{{ tarea.nombre }}</li>
+           <li>{{ tarea.descripcion }}</li>
+           <li>{{ tarea.proyecto }}</li>
+        </ul>
+
+    {% else %}
+        <p> No existe este empleado.</p>
+    {% endif %}
+
+
+{% endblock %}
