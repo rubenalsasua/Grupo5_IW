@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+    <h2>Todas las tareas</h2>
+
+    <table class="tablaTareas">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha límite</th>
+            <th>Prioridad</th>
+            <th>Estado</th>
+            <th>Empleado</th>
+            <th>Proyecto</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if tarea %}
+            {% for tarea in tarea %}
+
+                <tr>
+                    <td>{{ tarea.nombre }}</td>
+                    <td>{{ tarea.fecha_fin }}</td>
+                    <td>{{ tarea.prioridad }}</td>
+                    <td>{{ tarea.estado }}</td>
+                    <td>{{ tarea.empleado }}</td>
+                    <td>{{ tarea.proyecto }}</td>
+                </tr>
+
+            {% endfor %}
+
+
+        {% else %}
+            <p>No hay ninguna tarea</p>
+        {% endif %}
+
+
+        </tbody>
+    </table>
+
+{% endblock %}
