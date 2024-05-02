@@ -1,65 +1,75 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
-    <title>{% block titulo %}Proyectos Deustotil Tech S.L.{% endblock %}</title>
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}" />
+    <title>
+      {% block titulo %}
+        Proyectos Deustotil Tech S.L.
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="menu_but">
+          <i onclick="toggleMenu()" class="fa-solid fa-bars"></i>
+        </div>
 
-<header>
-    <div class="container">
+        <div class="logo_deusto">
+          <img class="deusto_mini_logo" src="https://media.istockphoto.com/id/1303269536/es/vector/forma-del-icono-del-logotipo-de-estilo-d.jpg?s=612x612&w=0&k=20&c=yRaNsjuw_liEcZp9qgklLh-LkIj4dnFqHiISlC4VHMg=" alt="logo-tornilleria-nava" />
+          <br />
+          <div class="titulo_deusto">
+            <a href="#">Tornillería Nava</a>
+          </div>
+        </div>
 
-      <div class="menu_but">
-       <i onclick="toggleMenu()" class="fa-solid fa-bars"></i>
+        <ul class="lista_menu">
+          <li>
+            <a href="principal.html">Inicio</a>
+          </li>
+          <li>
+            <a href="tornillos.html">Tornillos</a>
+          </li>
+          <li>
+            <a href="tuercas.html">Tuercas</a>
+          </li>
+          <li>
+            <a href="catalogo.html">Pasadores</a>
+          </li>
+        </ul>
+
+        <a href="PaginaLogin.html" class="login_button">Iniciar Sesión</a>
       </div>
 
-
-     <div class="logo_deusto">
-       <img class = "deusto_mini_logo" src="https://media.istockphoto.com/id/1303269536/es/vector/forma-del-icono-del-logotipo-de-estilo-d.jpg?s=612x612&w=0&k=20&c=yRaNsjuw_liEcZp9qgklLh-LkIj4dnFqHiISlC4VHMg=" alt="logo-tornilleria-nava">
-       <br>
-       <div class="titulo_deusto"> <a href="#">Tornillería Nava</a></div>
-     </div>
-
-
-
-      <ul class="lista_menu">
-         <li><a href="principal.html">Inicio</a></li>
-         <li><a href="tornillos.html">Tornillos</a></li>
-         <li><a href="tuercas.html">Tuercas</a></li>
-         <li><a href="catalogo.html">Pasadores</a></li>
-      </ul>
-
-          <a href="PaginaLogin.html" class="login_button">Iniciar Sesión</a>
-
-     </div>
-
-    <div class="menu_vertical">
-
+      <div class="menu_vertical">
         <ul id="menuItems">
-           <li><a href="principal.html">Inicio</a></li>
-           <li><a href="tornillos.html">Tornillos</a></li>
-           <li><a href="tuercas.html">Tuercas</a></li>
-           <li><a href="catalogo.html">Catálogo</a></li>
-         </ul>
+          <li>
+            <a href="principal.html">Inicio</a>
+          </li>
+          <li>
+            <a href="tornillos.html">Tornillos</a>
+          </li>
+          <li>
+            <a href="tuercas.html">Tuercas</a>
+          </li>
+          <li>
+            <a href="catalogo.html">Catálogo</a>
+          </li>
+        </ul>
+      </div>
 
-     </div>
+      <!-- Para linkarlo con lo programado en JS -->
+      <script src="js/script.js"></script>
+    </header>
 
-    <!--Para linkarlo con lo programado en JS-->
-     <script src="js/script.js"></script>
-
-  </header>
-
-
-<div id="content">
-    <h1>Proyectos Deustotil Tech S.L.</h1>
-    {% block contenido %}{% endblock %}
-
-</div>
-</body>
+    <div id="content">
+      <h1>Proyectos Deustotil Tech S.L.</h1>
+      {% block contenido %}
+      {% endblock %}
+    </div>
+  </body>
 </html>

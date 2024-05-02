@@ -3,13 +3,14 @@ from django.db import models
 
 # Create your models here.
 
+
 class Empleado(models.Model):
     dni = models.CharField(max_length=100)
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     telefono = models.IntegerField(max_length=100)
-    imagen = models.CharField(max_length=300, default = False)
+    imagen = models.CharField(max_length=300, default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -17,9 +18,9 @@ class Empleado(models.Model):
         return f"{self.nombre} {self.apellido}"
 
     class Meta:
-        verbose_name = 'Empleado'
-        verbose_name_plural = 'Empleados'
-        ordering = ['-created']
+        verbose_name = "Empleado"
+        verbose_name_plural = "Empleados"
+        ordering = ["-created"]
 
 
 class Proyecto(models.Model):
@@ -30,7 +31,7 @@ class Proyecto(models.Model):
     presupuesto = models.IntegerField()
     datos_cliente = models.TextField(max_length=100)
     jefe_proyecto = models.ForeignKey(Empleado, on_delete=models.CASCADE)
-    imagen = models.CharField(max_length=300, default = False)
+    imagen = models.CharField(max_length=300, default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -38,27 +39,27 @@ class Proyecto(models.Model):
         return f"{self.nombre} {self.datos_cliente}"
 
     class Meta:
-        verbose_name = 'Proyecto'
-        verbose_name_plural = 'Proyectos'
-        ordering = ['-created']
+        verbose_name = "Proyecto"
+        verbose_name_plural = "Proyectos"
+        ordering = ["-created"]
 
 
 class Tarea(models.Model):
     class Meta:
-        verbose_name = 'Tarea'
-        verbose_name_plural = 'Tareas'
-        ordering = ['-created']
+        verbose_name = "Tarea"
+        verbose_name_plural = "Tareas"
+        ordering = ["-created"]
 
     class Prioridad(models.TextChoices):
-        ALTA = 'Alta', 'Alta'
-        MEDIA = 'Media', 'Media'
-        BAJA = 'Baja', 'Baja'
+        ALTA = "Alta", "Alta"
+        MEDIA = "Media", "Media"
+        BAJA = "Baja", "Baja"
 
     class Estado(models.TextChoices):
-        ABIERTA = 'ABIERTA', 'ABIERTA'
-        ASIGNADA = 'ASIGNADA', 'ASIGNADA'
-        EN_PROCESO = 'EN PROCESO', 'EN PROCESO'
-        FINALIZADA = 'FINALIZADA', 'FINALIZADA'
+        ABIERTA = "ABIERTA", "ABIERTA"
+        ASIGNADA = "ASIGNADA", "ASIGNADA"
+        EN_PROCESO = "EN PROCESO", "EN PROCESO"
+        FINALIZADA = "FINALIZADA", "FINALIZADA"
 
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField(max_length=100)

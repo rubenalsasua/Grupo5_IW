@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <h2>Todos los proyectos</h2>
-    <h3>{{ proyecto.nombre }}</h3>
-    {% if proyectos %}
-        <ul>
-            {% for proyectos in proyectos %}
-                <h3>{{ proyectos.nombre }}</h3>
-                <li>{{ proyectos.fecha_inicio }}</li>
-                <li>{{ proyectos.fecha_fin }}</li>
-                <li>{{ proyectos.presupuesto }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No hay ningun proyecto</p>
-    {% endif %}
+  <h2>Todos los proyectos</h2>
+  <h3>{{ proyecto.nombre }}</h3>
+  {% if proyectos %}
+    <ul>
+      {% for proyectos in proyectos %}
+        <h3>{{ proyectos.nombre }}</h3>
+        <li>{{ proyectos.fecha_inicio }}</li>
+        <li>{{ proyectos.fecha_fin }}</li>
+        <li>{{ proyectos.presupuesto }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay ningun proyecto</p>
+  {% endif %}
 {% endblock %}
