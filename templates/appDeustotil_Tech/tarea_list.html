@@ -2,11 +2,14 @@
 
 {% block contenido %}
 
-    <h2>Todas las tareas</h2>
+    <div class="ruta_pagina">
+        <h3> Deustotil_Tech / Proyectos</h3>
+    </div>
 
     <table class="tablaTareas">
         <thead>
         <tr>
+            <th></th>
             <th>Nombre</th>
             <th>Fecha límite</th>
             <th>Prioridad</th>
@@ -20,6 +23,8 @@
             {% for tarea in tarea %}
 
                 <tr>
+                    <td>
+                        <a href="/appDeustotil_Tech/tarea/{{ tarea.id }}" class="boton_acceder">  Acceder</a></td>
                     <td>{{ tarea.nombre }}</td>
                     <td>{{ tarea.fecha_fin }}</td>
                     <td>{{ tarea.prioridad }}</td>

@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-  <h2>Detalle del proyecto</h2>
+
   {% if proyecto %}
-    <ul>
-      <li>{{ proyecto.nombre }}</li>
-      <li>{{ proyecto.descripcion }}</li>
-      <li>{{ proyecto.fecha_inicio }}</li>
-      <li>{{ proyecto.fecha_fin }}</li>
-      <li>{{ proyecto.presupuesto }}</li>
-      <li>{{ proyecto.datos_cliente }}</li>
-      <li>{{ proyecto.jefe_proyecto }}</li>
-    </ul>
+      <div class="ruta_pagina">
+          <h3> Deustotil_Tech / Proyecto / {{ proyecto.id }}</h3>
+      </div>
+
+      <div class="contenedor-proyecto">
+          <section class="contenedor-proyecto-imagen">
+               <img src="{{ proyecto.imagen }}" alt = "imagen-proyecto">
+          </section>
+          <section class="contenedor-proyecto-texto">
+             <h2> {{ proyecto.nombre }} </h2>
+             <h4> FECHAS :  {{ proyecto.fecha_inicio }} {{ proyecto.fecha_fin }}</h4>
+              <h4> DESCRIPCIÓN :  {{ proyecto.descripcion }}</h4>
+             <h4> PRESUPUESTO :  {{ proyecto.presupuesto }} <i class="fa fa-eur" aria-hidden="true"></i></h4>
+              <h4> CLIENTE :  {{ proyecto.datos_cliente }}</h4>
+              <h4> JEFE PROYECTO: <a href="/appDeustotil_Tech/empleado/{{ proyecto.jefe_proyecto_id }}">{{ proyecto.jefe_proyecto }}</a></h4>
+          </section>
+      </div>
+
   {% else %}
     <p>No existe este proyecto.</p>
   {% endif %}

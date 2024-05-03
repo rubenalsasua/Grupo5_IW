@@ -1,24 +1,27 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-  {% if empleado %}
+
+  {% if proyecto %}
       <div class="ruta_pagina">
-          <h3> Deustotil_Tech / Empleado / {{ empleado.id }}</h3>
+          <h3> Deustotil_Tech / Proyecto / {{ proyecto.id }}</h3>
       </div>
 
-      <div class="contenedor-empleado">
-          <section class="contenedor-empleado-imagen">
-               <img src="{{ empleado.imagen }}" alt = "imagen-empleado">
+      <div class="contenedor-proyecto">
+          <section class="contenedor-proyecto-imagen">
+               <img src="{{ proyecto.imagen }}" alt = "imagen-proyecto">
           </section>
-          <section class="contenedor-empleado-texto">
-             <h2> {{ empleado.nombre }} {{ empleado.apellido }}</h2>
-              <h4> DNI :  {{ empleado.dni }}</h4>
-             <h4> TELEFONO :  {{ empleado.telefono }}</h4>
-             <h4> MAIL :  {{ empleado.email }}</h4>
+          <section class="contenedor-proyecto-texto">
+             <h2> {{ proyecto.nombre }} </h2>
+             <h4> FECHAS :  {{ proyecto.fecha_inicio }} {{ proyecto.fecha_fin }}</h4>
+              <h4> DESCRIPCIÓN :  {{ proyecto.descripcion }}</h4>
+             <h4> PRESUPUESTO :  {{ proyecto.presupuesto }} <i class="fa fa-eur" aria-hidden="true"></i></h4>
+              <h4> CLIENTE :  {{ proyecto.datos_cliente }}</h4>
+              <h4> JEFE PROYECTO: <a href="/appDeustotil_Tech/empleado/{{ proyecto.jefe_proyecto_id }}">{{ proyecto.jefe_proyecto }}</a></h4>
           </section>
       </div>
 
   {% else %}
-    <p>No existe este empleado.</p>
+    <p>No existe este proyecto.</p>
   {% endif %}
 {% endblock %}

@@ -13,21 +13,18 @@ body {
     overflow-x: hidden;
 }
 
-    /*ruta de la pagina de navegacion*/
+/*ruta de la pagina de navegacion*/
 .ruta_pagina {
     width: 100%;
     height: 30px;
 }
 
-.ruta_pagina h3{
+.ruta_pagina h3 {
     margin: 20px 0px 0px 15px;
     font-size: 20px;
     font-weight: 200;
     color: black;
 }
-
-
-
 
 
 /* ----- ESTILOS BASE.HTML -----*/
@@ -358,13 +355,6 @@ div .caja {
 /*----- FIN DEL BASE.HTML ------*/
 
 
-
-
-
-
-
-
-
 /* ------TAREA_LIST------- */
 
 
@@ -382,14 +372,14 @@ td {
     padding: 1rem;
 
 
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 }
 
 
 th:hover,
 td:hover {
-    background-color: #1a579c;
+    background-color: #2F4F4F;
     color: white;
 }
 
@@ -400,10 +390,6 @@ th {
 
 
 /* FIN DE TAREA_LIST*/
-
-
-
-
 
 
 /*INICIO DE EMPLEADO LIST*/
@@ -477,27 +463,196 @@ th {
     background-color: rgb(243, 208, 144);
 }
 
+/*INICIO DE EMPLEADO LIST*/
+
+.container-empleados {
+
+    display: grid; /*  Técnica Display Grid */
+    /* 3x2 */
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: repeat(3, 470px);
+
+    gap: 40px;
+    padding: 20px;
+    background: whitesmoke;
+    height: 1450px;
+    margin-top: 100px;
+
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+}
+
+
+/* empleados */
+.empleado {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    height: 400px;
+    text-align: center;
+}
+
+/*Cuando pasamos cursor por encima*/
+.empleado:hover {
+    border-color: #2F4F4F;
+    box-shadow: 0 0 10px #2F4F4F;
+    /*background-color: #b1cdcd;*/
+}
+
+/*Retocamos la imagen (250x250)*/
+.empleado img {
+    width: 350px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.empleado h2 {
+    font-size: 22px;
+    font-weight: 200;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+/*Estilo botón de comprar*/
+
+.boton_acceder {
+    background-color: #2F4F4F;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+
+.boton_acceder:hover {
+    color: black;
+    background-color: rgb(243, 208, 144);
+}
+
+/*opcion responsive*/
+
+@media (max-width: 1280px) {
+    .container-empleados {
+
+        display: grid; /*  Técnica Display Grid */
+        /* 3x2 */
+        grid-template-columns: repeat(2, 400px);
+        grid-template-rows: repeat(4, 470px);
+        height: 2000px;
+    }
+}
+
+@media (max-width: 780px) {
+    .container-empleados {
+
+        display: grid; /*  Técnica Display Grid */
+        /* 3x2 */
+        grid-template-columns: repeat(1, 400px);
+        grid-template-rows: repeat(8, 470px);
+        height: 4000px;
+    }
+}
+
 /*FINAL DE EMPLEADO LIST*/
-
-
-
-
-
-
-
-
-
-
-
 
 /*INICIO EMPLEADO-DETAIL*/
 
-.contenedor-empleado{
+.contenedor-empleado {
     display: flex;
     margin-bottom: 150px;
 }
 
-    /*IMAGEN DEL PRODUCTO*/
+/*IMAGEN DEL PRODUCTO*/
+
+.contenedor-empleado-imagen {
+
+    width: 500px;
+    margin: 50px 20px 20px 50px;
+
+}
+
+.contenedor-empleado-imagen img {
+    position: relative; /*podemos desplazar la imagen*/
+    width: 450px;
+    height: 350px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.contenedor-empleado-imagen-1280 {
+
+    width: 300px;
+    margin: 50px 20px 20px 50px;
+
+}
+
+.contenedor-empleado-imagen-1280 img {
+    position: relative; /*podemos desplazar la imagen*/
+    width: 250px;
+    height: 125px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/*TEXTO DEL EMPLEADO*/
+
+.contenedor-empleado-texto {
+    flex: 1; /* El contenido principal ocupa el espacio restante */
+    margin: 1rem;
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+    margin-right: 130px;
+    margin-left: 50px;
+    margin-top: 40px;
+    min-width: 300px;
+    border: 1px solid #535353;
+    border-radius: 10px;
+    padding-left: 40px;
+
+}
+
+.contenedor-empleado-texto h2 {
+    color: #2F4F4F;
+    font-size: 44px;
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+
+.contenedor-empleado-texto h4 {
+    color: #2F4F4F;
+    font-size: 18px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+
+/*responsive empleados detail*/
+/*tablet*/
+
+@media (max-width: 1280px) {
+    .contenedor-empleado-imagen {
+        display: none;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .contenedor-empleado-imagen-1280 {
+        display: none;
+    }
+
+}
+
+
+/*FINAL DE EMPLEADO-DETAIL*/
+
+/*IMAGEN DEL PRODUCTO*/
 
 .contenedor-empleado-imagen {
 
@@ -515,7 +670,7 @@ th {
 }
 
 
-      /*TEXTO DEL EMPLEADO*/
+/*TEXTO DEL EMPLEADO*/
 
 .contenedor-empleado-texto {
     flex: 1; /* El contenido principal ocupa el espacio restante */
@@ -528,7 +683,7 @@ th {
 
 }
 
-.contenedor-empleado-texto h2{
+.contenedor-empleado-texto h2 {
     color: #2F4F4F;
     font-size: 44px;
     font-weight: 200;
@@ -543,18 +698,13 @@ th {
 }
 
 
-
 /*FINAL DE EMPLEADO-DETAIL*/
-
-
-
-
-
-
 
 
 /*INICIO PROYECTO LIST*/
 
+
+/*INICIO PROYECTO LIST*/
 
 
 .container-proyectos {
@@ -626,5 +776,196 @@ th {
     background-color: rgb(243, 208, 144);
 }
 
+/*opcion responsive*/
+
+@media (max-width: 1280px) {
+    .container-proyectos {
+
+        display: grid; /*  Técnica Display Grid */
+        /* 3x2 */
+        grid-template-columns: repeat(2, 400px);
+        grid-template-rows: repeat(3, 470px);
+        height: 1800px;
+    }
+}
+
+@media (max-width: 780px) {
+    .container-proyectos {
+
+        display: grid; /*  Técnica Display Grid */
+        /* 3x2 */
+        grid-template-columns: repeat(1, 400px);
+        grid-template-rows: repeat(6, 470px);
+        height: 3000px;
+    }
+}
 
 /*FINAL DE PROYECTO LIST*/
+
+/* empleados */
+.proyecto {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    height: 400px;
+    text-align: center;
+}
+
+/*Cuando pasamos cursor por encima*/
+.proyecto:hover {
+    border-color: #2F4F4F;
+    box-shadow: 0 0 10px #2F4F4F;
+    /*background-color: #b1cdcd;*/
+}
+
+/*Retocamos la imagen (250x250)*/
+.proyecto img {
+    width: 350px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.proyecto h2 {
+    font-size: 22px;
+    font-weight: 200;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+/*Estilo botón de comprar*/
+
+.boton_acceder {
+    background-color: #2F4F4F;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+
+.boton_acceder:hover {
+    color: black;
+    background-color: rgb(243, 208, 144);
+}
+
+
+/*FINAL DE PROYECTO LIST*/
+
+/*ESTILOS GENERALES PARA LOS CREATE*/
+
+.nuevop {
+    text-align: center;
+    font-size: 2rem;
+    margin-right: 33rem;
+    margin-left: 33rem;
+    margin-bottom: 2rem;
+}
+
+/*FIN DE LOS CREATE*/
+
+/*INDEX*/
+
+.info-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    flex: 1 0 33.33%;
+    margin: 4rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.enlacesInicio {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50%;
+    background-color: rgb(243, 208, 144);
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.enlacesInicio:hover {
+    background-color: white;
+}
+
+
+/*FIN INDEX*/
+
+/*INICIO DE PROYECTO DETAIL*/
+
+
+.contenedor-proyecto {
+    display: flex;
+    margin-bottom: 150px;
+}
+
+/*IMAGEN DEL PRODUCTO*/
+
+.contenedor-proyecto-imagen {
+
+    width: 500px;
+    margin: 50px 20px 20px 50px;
+
+}
+
+.contenedor-proyecto-imagen img {
+    position: relative; /*podemos desplazar la imagen*/
+    width: 450px;
+    height: 350px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/*TEXTO DEL EMPLEADO*/
+
+.contenedor-proyecto-texto {
+    flex: 1; /* El contenido principal ocupa el espacio restante */
+    margin: 1rem;
+    padding: 2rem 1rem;
+    margin-top: 40px;
+    margin-bottom: 3rem;
+    margin-right: 130px;
+    margin-left: 50px;
+    min-width: 300px;
+
+    border: 1px solid #535353;
+    border-radius: 10px;
+    padding-left: 40px;
+
+}
+
+.contenedor-proyecto-texto h2 {
+    color: #2F4F4F;
+    font-size: 44px;
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+
+.contenedor-proyecto-texto h4 {
+    color: #2F4F4F;
+    font-size: 18px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+.contenedor-proyecto-texto a {
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.contenedor-empleado-texto a:hover {
+    color: orange;
+}
+
+
+/*FINAL DE PROYECTO DETAIL*/
