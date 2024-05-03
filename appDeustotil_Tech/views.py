@@ -19,7 +19,7 @@ from appDeustotil_Tech.models import Tarea
 
 
 def index(request):
-    return HttpResponse("Esta es nuestra aplicación de Django!")
+    return render(request, "appDeustotil_Tech/index.html")
 
 
 # PROYECTOS VIEWS

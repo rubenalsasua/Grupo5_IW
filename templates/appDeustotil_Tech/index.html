@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página de Inicio - appDeustotil_Tech</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+{% extends 'base.html' %}
+
+{% block contenido %}
+
   <body>
-    <header>
-      <img src="logo.png" alt="Deustotil_Tech" />
-      <nav>
-        <ul>
-          <li>
-            <a href="proyectos.html">Proyectos</a>
-          </li>
-          <li>
-            <a href="tarea.html">Tarea</a>
-          </li>
-          <li>
-            <a href="empleado.html">Empleado</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
     <main>
       <div class="slider">
         <img src="slide1.jpg" alt="Proyecto" />
@@ -73,4 +53,6 @@
         </ul>
       </div>
     </footer>
-</html>
+
+{% endblock %}
+

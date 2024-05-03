@@ -1,3 +1,26 @@
+/*Estilos Generales (Pantalla Inicio)*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    /*background-color: rgb(234, 234, 251);*/
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+
+/* ----- ESTILOS BASE.HTML -----*/
+
 /* HEADER -- Estilos del menu CSS */
 
 
@@ -17,15 +40,11 @@ a:hover {
    color: gray;
 }
 
-
-
-
 header {
    background-color: #2F4F4F;
    position: relative;
    padding: 0.5rem;
 }
-
 
 .container {
    display: flex;
@@ -177,13 +196,157 @@ header {
    }
 }
 
-
-
-
 /*FIN DEL HEADER*/
 
 
-/* TAREA_LIST */
+/*FOOTER*/
+
+div .caja{
+    background: #2F4F4F;
+    display: flex;
+    text-align: center;
+    padding: 50px 0px 60px 0px;
+}
+
+/*estilo texto footer*/
+
+.logo-footer-Deustotil{
+    padding: 0px 0px 0px 100px;
+}
+
+.logo-footer-Deustotil img{
+    margin-top: 25px;
+    height: 8rem;
+    width: 6rem;
+}
+
+.texto-footer {
+    width: 350px;
+    text-align: left;
+    padding: 30px 50px 0px 30px;
+}
+
+.texto-footer h3{
+    font-size: 25px;
+    font-weight: 700;
+    color: #f5f5f5;
+}
+
+.texto-footer p {
+
+    color: #f5f5f5;
+    font-size: 20px;
+
+}
+
+/*estilo texto sobre nosotros*/
+.texto-sobrenosotros {
+    text-align: left;
+    width: 450px;
+    padding: 25px 75px 0px 50px;
+}
+
+.texto-sobrenosotros h4{
+    font-size: 25px;
+    font-weight: 600;
+    color: #f5f5f5;
+}
+
+.texto-sobrenosotros p {
+
+    color: #f5f5f5;
+    font-size: 15px;
+
+}
+
+/*estilo texto contacto*/
+.texto-contacto {
+    text-align: left;
+    width: 400px;
+    padding: 25px 75px 0px 75px;
+
+}
+
+.texto-contacto h4{
+    font-size: 25px;
+    font-weight: 600;
+    color: #f5f5f5;
+}
+
+.texto-contacto i{
+    display: flex;
+
+}
+.texto-contacto i a{
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+/*estilo imagen */
+
+.foto-footer-confianza {
+
+    text-align: right;
+    width: 200px;
+    padding: 50px 75px 0px 20px;
+
+}
+
+.foto-footer-confianza img{
+    height: 5rem;
+    width: 13rem;
+}
+
+
+/*FOOTER RESPONSIVE */
+
+/*movil*/
+
+@media(max-width: 768px) {
+    .footer-resizable-1280{
+        display: none;
+    }
+    .footer-normal {
+        display: none;
+    }
+}
+
+/*ordenador*/
+
+@media(min-width: 1280px) {
+    .footer-resizable-1280{
+        display: none;
+    }
+    .footer-resizable-768{
+        display: none;
+    }
+}
+
+/*tablet*/
+
+@media(min-width: 768px) {
+    .footer-resizable-768{
+        display: none;
+    }
+}
+@media(max-width: 1280px){
+    .footer-normal {
+        display: none;
+    }
+}
+
+/*FIN DEL FOOTER*/
+
+
+/*----- FIN DEL BASE.HTML ------*/
+
+
+
+
+
+/* ------TAREA_LIST------- */
 
 
 .tablaTareas {
@@ -217,11 +380,19 @@ th {
 }
 
 
-
-
 /* FIN DE TAREA_LIST*/
-html {
-   box-sizing: border-box;
-   font-size: 62.5%;
-   /*1 rem son 10px*/
+
+
+
+
+
+/*INICIO DE EMPLEADO LIST*/
+
+.ruta_pagina {
+    width: 100%;
+    height:30px;
+    font-size: 15px;
+    font-weight: 200;
+    margin-bottom: 20px;
+    margin-left: 10px;
 }
