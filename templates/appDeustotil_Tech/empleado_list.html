@@ -1,27 +1,24 @@
 {% extends 'base.html' %}
-
 {% block contenido %}
 
-  {% if proyecto %}
-      <div class="ruta_pagina">
-          <h3> Deustotil_Tech / Proyecto / {{ proyecto.id }}</h3>
-      </div>
+  {% if empleado %}
+      <div class="general">
+           <div class="ruta_pagina">
+               <h3> Deustotil_Tech / Empleados</h3>
+           </div>
 
-      <div class="contenedor-proyecto">
-          <section class="contenedor-proyecto-imagen">
-               <img src="{{ proyecto.imagen }}" alt = "imagen-proyecto">
-          </section>
-          <section class="contenedor-proyecto-texto">
-             <h2> {{ proyecto.nombre }} </h2>
-             <h4> FECHAS :  {{ proyecto.fecha_inicio }} {{ proyecto.fecha_fin }}</h4>
-              <h4> DESCRIPCIÓN :  {{ proyecto.descripcion }}</h4>
-             <h4> PRESUPUESTO :  {{ proyecto.presupuesto }} <i class="fa fa-eur" aria-hidden="true"></i></h4>
-              <h4> CLIENTE :  {{ proyecto.datos_cliente }}</h4>
-              <h4> JEFE PROYECTO: <a href="/appDeustotil_Tech/empleado/{{ proyecto.jefe_proyecto_id }}">{{ proyecto.jefe_proyecto }}</a></h4>
-          </section>
-      </div>
+          <ul class="container-empleados">
+               {% for empleado in empleado %}
+                     <div class="empleado">
+                          <img src="{{ empleado.imagen }}" alt="imagen-empleado">
+                          <h2>{{ empleado.nombre }} {{ empleado.apellido }}</h2>
+                          <a href="/appDeustotil_Tech/empleado/{{ empleado.id }}" class="boton_acceder"> <i class="fa fa-download" aria-hidden="true"></i> Acceder</a>
+                     </div>
+               {% endfor %}
+          </ul>
 
+      </div>
   {% else %}
-    <p>No existe este proyecto.</p>
+    <p>No hay ningun empleado</p>
   {% endif %}
 {% endblock %}
