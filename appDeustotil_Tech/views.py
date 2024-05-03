@@ -9,7 +9,7 @@ from django.views.generic import (
     UpdateView,
     CreateView,
 )
-from appDeustotil_Tech.forms import EmpleadoForm
+from appDeustotil_Tech.forms import EmpleadoForm, ProyectoForm, TareaForm
 from appDeustotil_Tech.models import Proyecto
 from appDeustotil_Tech.models import Empleado
 from appDeustotil_Tech.models import Tarea
@@ -81,3 +81,39 @@ class TareaDetailView(DetailView):
     model = Tarea
     template_name = "appDeustotil_Tech/tarea_detail.html"
     context_object_name = "tarea"
+
+
+class TareaCreateView(View):
+    def get(self, request):
+        formulario = TareaForm()
+        context = {"formulario": formulario}
+        return render(request, "appDeustotil_Tech/tarea_create.html", context)
+
+    def post(self, request):
+        formulario = TareaForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect("index")
+        return render(
+            request,
+            "appDeustotil_Tech/tarea_create.html",
+            {"formulario": formulario},
+        )
+
+
+class ProyectoCreateView(View):
+    def get(self, request):
+        formulario = ProyectoForm()
+        context = {"formulario": formulario}
+        return render(request, "appDeustotil_Tech/proyecto_create.html", context)
+
+    def post(self, request):
+        formulario = ProyectoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect("index")
+        return render(
+            request,
+            "appDeustotil_Tech/proyecto_create.html",
+            {"formulario": formulario},
+        )

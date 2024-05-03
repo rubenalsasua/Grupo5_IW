@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block contenido %}
+  <h2>Nueva tarea</h2>
+  <form action="{% url 'tarea-create' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.errors }}
+    {{ formulario.as_p }}
+    <input type="submit" value="Nueva tarea" />
+  </form>
+{% endblock %}

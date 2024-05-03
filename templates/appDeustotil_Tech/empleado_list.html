@@ -1,20 +1,23 @@
 {% extends 'base.html' %}
 {% block contenido %}
-  
-  {% if empleado %}
-      <div class="ruta_pagina">
-          <h3> Deustotil_Tech / Empleados</h3>
-      </div>
 
-    <ul>
-      {% for empleado in empleado %}
-          <div class="producto">
-                <img src="{{ empleado.imagen }}" alt="imagen-empleado">
-                <h2>{{ empleado.nombre }} {{ empleado.apellido }}</h2>
-                <a href="tornilloDin168.html" class="boton_comprar"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Acceder</a>
-            </div>
-      {% endfor %}
-    </ul>
+  {% if empleado %}
+      <div class="general">
+           <div class="ruta_pagina">
+               <h3> Deustotil_Tech / Empleados</h3>
+           </div>
+
+          <ul class="container-empleados">
+               {% for empleado in empleado %}
+                     <div class="empleado">
+                          <img src="{{ empleado.imagen }}" alt="imagen-empleado">
+                          <h2>{{ empleado.nombre }} {{ empleado.apellido }}</h2>
+                          <a href="tornilloDin168.html" class="boton_acceder"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Acceder</a>
+                     </div>
+               {% endfor %}
+          </ul>
+
+      </div>
   {% else %}
     <p>No hay ningun empleado</p>
   {% endif %}

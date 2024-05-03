@@ -14,48 +14,43 @@ body {
 }
 
 
-
-
-
-
-
 /* ----- ESTILOS BASE.HTML -----*/
 
 /* HEADER -- Estilos del menu CSS */
 
 
 li {
-   list-style: none;
+    list-style: none;
 }
 
 
 li a {
-   text-decoration: none;
-   color: white;
-   font-size: 1.15rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.15rem;
 }
 
 
 a:hover {
-   color: gray;
+    color: gray;
 }
 
 header {
-   background-color: #2F4F4F;
-   position: relative;
-   padding: 0.5rem;
+    background-color: #2F4F4F;
+    position: relative;
+    padding: 0.5rem;
 }
 
 .container {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   width: 100%;
-   height: 75px;
-   /*max-width: 1600px;*/
-   max-width: 1600px;
-   margin: 0.5rem;
-   margin-left: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 75px;
+    /*max-width: 1600px;*/
+    max-width: 1600px;
+    margin: 0.5rem;
+    margin-left: 2.5rem;
 }
 
 
@@ -65,30 +60,30 @@ header {
 .deusto_mini_logo {
 
 
-   height: 5rem;
-   width: 3.25rem;
+    height: 5rem;
+    width: 3.25rem;
 }
 
 
 .container .titulo_deusto a {
-   font-size: 1.4rem;
-   color: whitesmoke;
-   justify-content: left;
-   text-decoration: none;
-   font-weight: bold;
-   margin-left: 1rem;
+    font-size: 1.4rem;
+    color: whitesmoke;
+    justify-content: left;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 1rem;
 }
 
 
 .container .logo_deusto {
-   display: flex;
-   align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 
 .container .lista_menu {
-   display: flex;
-   gap: 2rem;
+    display: flex;
+    gap: 2rem;
 }
 
 
@@ -96,15 +91,15 @@ header {
 
 
 .login_button {
-   background-color: orange;
-   color: white;
-   padding: 0.5rem 1rem;
-   border: none;
-   font-size: 1.15rem;
-   text-decoration: none;
-   border-radius: 10px;
-   justify-content: left;
-   margin-right: 2rem;
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 1.15rem;
+    text-decoration: none;
+    border-radius: 10px;
+    justify-content: left;
+    margin-right: 2rem;
 
 
 }
@@ -114,27 +109,27 @@ header {
 
 
 .menu_vertical {
-   position: absolute;
-   left: 2rem;
-   top: 70px;
-   width: 150px;
-   background: rgb(90, 90, 90);
-   border-radius: 10px;
-   overflow: hidden;
-   display: none;
+    position: absolute;
+    left: 2rem;
+    top: 70px;
+    width: 150px;
+    background: rgb(90, 90, 90);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
 }
 
 
 .menu_vertical a {
-   color: white;
+    color: white;
 }
 
 
 .menu_vertical li {
-   padding: 0.7rem;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -142,58 +137,58 @@ header {
 
 
 @media (max-width: 900px) {
-   .container .lista_menu {
-       display: none;
-   }
+    .container .lista_menu {
+        display: none;
+    }
 
 
-   .container .menu_but {
-       display: block;
-   }
+    .container .menu_but {
+        display: block;
+    }
 
 
-   .menu_vertical {
-       display: block;
-   }
+    .menu_vertical {
+        display: block;
+    }
 }
 
 
 @media (min-width: 900px) {
-   .container .menu_but {
-       display: none;
-   }
+    .container .menu_but {
+        display: none;
+    }
 
 
-   .menu_vertical {
-       display: none;
-   }
+    .menu_vertical {
+        display: none;
+    }
 }
 
 
 @media (max-width: 768px) {
-   .slider {
-       display: none;
-   }
+    .slider {
+        display: none;
+    }
 
 
-   .foto768 {
-       display: flex;
-       height: 500px;
-       width: 768px;
-   }
+    .foto768 {
+        display: flex;
+        height: 500px;
+        width: 768px;
+    }
 }
 
 
 @media (min-width: 768px) {
-   .slider {
-       display: flex;
-   }
+    .slider {
+        display: flex;
+    }
 
 
-   .foto768 {
-       display: none;
-       margin: 10px 1px;
-   }
+    .foto768 {
+        display: none;
+        margin: 10px 1px;
+    }
 }
 
 /*FIN DEL HEADER*/
@@ -201,7 +196,7 @@ header {
 
 /*FOOTER*/
 
-div .caja{
+div .caja {
     background: #2F4F4F;
     display: flex;
     text-align: center;
@@ -210,11 +205,11 @@ div .caja{
 
 /*estilo texto footer*/
 
-.logo-footer-Deustotil{
+.logo-footer-Deustotil {
     padding: 0px 0px 0px 100px;
 }
 
-.logo-footer-Deustotil img{
+.logo-footer-Deustotil img {
     margin-top: 25px;
     height: 8rem;
     width: 6rem;
@@ -226,7 +221,7 @@ div .caja{
     padding: 30px 50px 0px 30px;
 }
 
-.texto-footer h3{
+.texto-footer h3 {
     font-size: 25px;
     font-weight: 700;
     color: #f5f5f5;
@@ -246,7 +241,7 @@ div .caja{
     padding: 25px 75px 0px 50px;
 }
 
-.texto-sobrenosotros h4{
+.texto-sobrenosotros h4 {
     font-size: 25px;
     font-weight: 600;
     color: #f5f5f5;
@@ -267,17 +262,18 @@ div .caja{
 
 }
 
-.texto-contacto h4{
+.texto-contacto h4 {
     font-size: 25px;
     font-weight: 600;
     color: #f5f5f5;
 }
 
-.texto-contacto i{
+.texto-contacto i {
     display: flex;
 
 }
-.texto-contacto i a{
+
+.texto-contacto i a {
     color: #f5f5f5;
     text-decoration: none;
     font-size: 15px;
@@ -294,7 +290,7 @@ div .caja{
 
 }
 
-.foto-footer-confianza img{
+.foto-footer-confianza img {
     height: 5rem;
     width: 13rem;
 }
@@ -304,10 +300,11 @@ div .caja{
 
 /*movil*/
 
-@media(max-width: 768px) {
-    .footer-resizable-1280{
+@media (max-width: 768px) {
+    .footer-resizable-1280 {
         display: none;
     }
+
     .footer-normal {
         display: none;
     }
@@ -315,23 +312,25 @@ div .caja{
 
 /*ordenador*/
 
-@media(min-width: 1280px) {
-    .footer-resizable-1280{
+@media (min-width: 1280px) {
+    .footer-resizable-1280 {
         display: none;
     }
-    .footer-resizable-768{
+
+    .footer-resizable-768 {
         display: none;
     }
 }
 
 /*tablet*/
 
-@media(min-width: 768px) {
-    .footer-resizable-768{
+@media (min-width: 768px) {
+    .footer-resizable-768 {
         display: none;
     }
 }
-@media(max-width: 1280px){
+
+@media (max-width: 1280px) {
     .footer-normal {
         display: none;
     }
@@ -343,16 +342,13 @@ div .caja{
 /*----- FIN DEL BASE.HTML ------*/
 
 
-
-
-
 /* ------TAREA_LIST------- */
 
 
 .tablaTareas {
-   width: 95%;
-   border-collapse: collapse;
-   margin-left: 4rem;
+    width: 95%;
+    border-collapse: collapse;
+    margin-left: 4rem;
 }
 
 
@@ -360,39 +356,114 @@ th,
 td {
 
 
-   padding: 1rem;
+    padding: 1rem;
 
 
-   font-size: 3rem;
-   text-align: center;
+    font-size: 3rem;
+    text-align: center;
 }
 
 
 th:hover,
 td:hover {
-   background-color: #1a579c;
-   color: white;
+    background-color: #1a579c;
+    color: white;
 }
 
 
 th {
-   background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 
 /* FIN DE TAREA_LIST*/
 
 
-
-
-
 /*INICIO DE EMPLEADO LIST*/
+
+.container-empleados {
+
+    display: grid; /*  Técnica Display Grid */
+    /* 3x2 */
+    grid-template-columns: repeat(4, 275px);
+    grid-template-rows: repeat(2, 550px);
+
+    gap: 40px;
+    padding: 20px;
+    background: whitesmoke;
+    height: 1300px;
+    margin-top: 100px;
+
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+}
 
 .ruta_pagina {
     width: 100%;
-    height:30px;
+    height: 30px;
     font-size: 15px;
     font-weight: 200;
     margin-bottom: 20px;
     margin-left: 10px;
+}
+
+/* empleados */
+.empleado {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    height: 500px;
+    text-align: center;
+}
+
+/*Cuando pasamos cursor por encima*/
+.empleado:hover {
+    border-color: #2F4F4F;
+    box-shadow: 0 0 10px #2F4F4F;
+    /*background-color: #b1cdcd;*/
+}
+
+/*Retocamos la imagen (250x250)*/
+.empleado img {
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.empleado h2 {
+    font-size: 22px;
+    font-weight: 200;
+    padding-top: 15px;
+}
+
+.empleado p {
+    color: rgb(69, 69, 69);
+    padding-top: 10px;
+}
+
+.empleado h3 {
+    color: #2F4F4F;
+    padding: 20px;
+    /*text-align: center;*/
+    font-size: 25px;
+}
+
+/*Estilo botón de comprar*/
+
+.boton_acceder {
+    background-color: #2F4F4F;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+
+.boton_comprar:hover {
+    color: black;
+    background-color: rgb(243, 208, 144);
 }
