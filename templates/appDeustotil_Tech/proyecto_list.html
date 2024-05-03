@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 {% block contenido %}
-  <h2>Todos los proyectos</h2>
-  <h3>{{ proyecto.nombre }}</h3>
+
   {% if proyectos %}
-    <ul>
-      {% for proyectos in proyectos %}
-        <h3>{{ proyectos.nombre }}</h3>
-        <li>{{ proyectos.fecha_inicio }}</li>
-        <li>{{ proyectos.fecha_fin }}</li>
-        <li>{{ proyectos.presupuesto }}</li>
-      {% endfor %}
-    </ul>
+      <div>
+           <div class="ruta_pagina">
+               <h3> Deustotil_Tech / Proyectos</h3>
+           </div>
+           <div class="container-proyectos">
+               {% for proyectos in proyectos %}
+                     <div class="proyecto">
+                          <img src="{{ proyectos.imagen }}" alt="imagen-proyecto">
+                          <h2>{{ proyectos.nombre }}</h2>
+                          <a href="/appDeustotil_Tech/proyecto/{{ proyectos.id }}" class="boton_acceder"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Acceder</a>
+                     </div>
+               {% endfor %}
+          </div>
+
+      </div>
   {% else %}
     <p>No hay ningun proyecto</p>
   {% endif %}

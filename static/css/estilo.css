@@ -17,14 +17,17 @@ body {
 .ruta_pagina {
     width: 100%;
     height: 30px;
-    font-size: 15px;
-    font-weight: 200;
-
 }
 
 .ruta_pagina h3{
-    margin: 20px 0px 0px 10px;
+    margin: 20px 0px 0px 15px;
+    font-size: 20px;
+    font-weight: 200;
+    color: black;
 }
+
+
+
 
 
 /* ----- ESTILOS BASE.HTML -----*/
@@ -213,7 +216,7 @@ div .caja {
     background: #2F4F4F;
     display: flex;
     text-align: center;
-    padding: 50px 0px 60px 0px;
+    padding: 50px 0px 50px 0px;
 }
 
 /*estilo texto footer*/
@@ -358,6 +361,10 @@ div .caja {
 
 
 
+
+
+
+
 /* ------TAREA_LIST------- */
 
 
@@ -469,3 +476,155 @@ th {
     color: black;
     background-color: rgb(243, 208, 144);
 }
+
+/*FINAL DE EMPLEADO LIST*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*INICIO EMPLEADO-DETAIL*/
+
+.contenedor-empleado{
+    display: flex;
+    margin-bottom: 150px;
+}
+
+    /*IMAGEN DEL PRODUCTO*/
+
+.contenedor-empleado-imagen {
+
+    width: 500px;
+    margin: 50px 20px 20px 50px;
+
+}
+
+.contenedor-empleado-imagen img {
+    position: relative; /*podemos desplazar la imagen*/
+    width: 450px;
+    height: 350px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+      /*TEXTO DEL EMPLEADO*/
+
+.contenedor-empleado-texto {
+    flex: 1; /* El contenido principal ocupa el espacio restante */
+    margin: 1rem;
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+    margin-right: 130px;
+    margin-left: 50px;
+    min-width: 300px;
+
+}
+
+.contenedor-empleado-texto h2{
+    color: #2F4F4F;
+    font-size: 44px;
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+
+.contenedor-empleado-texto h4 {
+    color: #2F4F4F;
+    font-size: 18px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+
+
+/*FINAL DE EMPLEADO-DETAIL*/
+
+
+
+
+
+
+
+
+/*INICIO PROYECTO LIST*/
+
+
+
+.container-proyectos {
+
+    display: grid; /*  Técnica Display Grid */
+    /* 3x2 */
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: repeat(3, 470px);
+
+    gap: 40px;
+    padding: 20px;
+    background: whitesmoke;
+    height: 1450px;
+    margin-top: 100px;
+
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+}
+
+
+/* empleados */
+.proyecto {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    height: 400px;
+    text-align: center;
+}
+
+/*Cuando pasamos cursor por encima*/
+.proyecto:hover {
+    border-color: #2F4F4F;
+    box-shadow: 0 0 10px #2F4F4F;
+    /*background-color: #b1cdcd;*/
+}
+
+/*Retocamos la imagen (250x250)*/
+.proyecto img {
+    width: 350px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.proyecto h2 {
+    font-size: 22px;
+    font-weight: 200;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+/*Estilo botón de comprar*/
+
+.boton_acceder {
+    background-color: #2F4F4F;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+
+.boton_acceder:hover {
+    color: black;
+    background-color: rgb(243, 208, 144);
+}
+
+
+/*FINAL DE PROYECTO LIST*/

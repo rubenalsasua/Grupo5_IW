@@ -5,11 +5,17 @@
       <div class="ruta_pagina">
           <h3> Deustotil_Tech / Empleado / {{ empleado.id }}</h3>
       </div>
-      <div>
-         <img src="{{ empleado.imagen }}" alt = "imagen-empleado">
-      </div>
-      <div>
-      
+
+      <div class="contenedor-empleado">
+          <section class="contenedor-empleado-imagen">
+               <img src="{{ empleado.imagen }}" alt = "imagen-empleado">
+          </section>
+          <section class="contenedor-empleado-texto">
+             <h2> {{ empleado.nombre }} {{ empleado.apellido }}</h2>
+              <h4> DNI :  {{ empleado.dni }}</h4>
+             <h4> TELEFONO :  {{ empleado.telefono }}</h4>
+             <h4> MAIL :  {{ empleado.email }}</h4>
+          </section>
       </div>
 
   {% else %}
