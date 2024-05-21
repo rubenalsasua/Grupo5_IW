@@ -15,12 +15,19 @@ from appDeustotil_Tech.models import Empleado
 from appDeustotil_Tech.models import Tarea
 from appDeustotil_Tech.models import Usuario
 
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
 
 # Create your views here.
 
 
 def login(request):
     return render(request, "PaginaLogin.html")
+
 
 def index(request):
     return render(request, "appDeustotil_Tech/index.html")
@@ -33,6 +40,22 @@ class ProyectoListView(ListView):
     model = Proyecto
     template_name = "appDeustotil_Tech/proyecto_list.html"
     context_object_name = "proyectos"
+
+
+def mandar_email(request):
+    subject = 'Informe de proyectos'
+    proyectos = Proyecto.objects.all()
+    context = {'proyecto': proyectos}
+    html_message = render_to_string('appDeustotil_Tech/email.html', context)
+    plain_message = strip_tags(html_message)
+    from_email = 'grupo5iw.deusto@gmail.com'
+    recipient_list = ['r.alsasua@opendeusto.es']
+
+    email = EmailMessage(subject, plain_message, from_email, recipient_list)
+    email.content_subtype = 'html'
+    email.send()
+
+    return HttpResponse('Correo con plantilla enviado exitosamente.')
 
 
 class ProyectoDetailView(DetailView):
@@ -90,23 +113,21 @@ class TareaDetailView(DetailView):
 # LOGIN VIEWS (obtener los registros de la BBDD)
 
 def ValidarUser(request):
-
     user = Usuario.objects.all()
     print(user)
     context_object_name = "usuario"
     return render(request, 'PaginaLogin.html')
 
-class UsuarioDetailView(DetailView):
 
+class UsuarioDetailView(DetailView):
     model = Usuario
     template_name = "PaginaLogin.html"
     context_object_name = "usuario"
 
-def BuscarUser(request, usuario):
 
+def BuscarUser(request, usuario):
     UserObject = Usuario.objects.filter(user__icontains=usuario)
     return render(request, 'appDeustotil_Tech/prbLogin.html', {'Usuario': usuario})
-
 
 
 # CREATE VIEWS

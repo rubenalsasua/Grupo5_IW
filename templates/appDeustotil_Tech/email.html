@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe de proyectos</title>
+</head>
+<body>
+    <h1>Lista de Proyectos</h1>
+    <ul>
+        {% for proyecto in proyectos %}
+            <li>
+                <strong>Nombre:</strong> {{ proyecto.nombre }}<br>
+                <strong>Descripción:</strong> {{ proyecto.descripcion }}<br>
+                <strong>Fecha de Inicio:</strong> {{ proyecto.fecha_inicio }}<br>
+                <strong>Fecha de Fin:</strong> {{ proyecto.fecha_fin }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

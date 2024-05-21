@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <h2>Nuevo proyecto</h2>
+    <h2 class="titulo_create">Nuevo proyecto</h2>
     <form class="nuevop" action="{% url 'proyecto-create' %}" method="post">
         {% csrf_token %}
         {{ formulario.errors }}

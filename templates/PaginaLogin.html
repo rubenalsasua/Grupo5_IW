@@ -1,70 +1,71 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Inicio Sesión</title>
     <link rel="stylesheet" href="../static/css/LoginEstilo.css">
 </head>
 <body>
 
-    <!--Pantallita de Login -->
-    <div class="container">
-        <form action="">
-            <h1>Iniciar Sesión</h1>
-             <!--Username/Password/Checkbox...-->
-            <div class="input-box">
-                <!--Función required. Para que salte una ventanita-->
-                <input type="user" placeholder="Usuario" required id="username">
-                <i class="fa-regular fa-user"></i> <!--Icono de usuario-->
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Contraseña" required id="password">
-                <i class="fa-solid fa-key"></i> <!--Icono de contraseña -->
-            </div>
-            <div class="recordar_user">
-                <label><input type="checkbox"> Recordar</label>
-                <a href="#">Has olvidado la contraseña?</a>
-            </div>
+<!--Pantallita de Login -->
+<div class="container">
+    <form action="">
+        <h1>Iniciar Sesión</h1>
+        <!--Username/Password/Checkbox...-->
+        <div class="input-box">
+            <!--Función required. Para que salte una ventanita-->
+            <input type="user" placeholder="Usuario" required id="username">
+            <i class="fa-regular fa-user"></i> <!--Icono de usuario-->
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder="Contraseña" required id="password">
+            <i class="fa-solid fa-key"></i> <!--Icono de contraseña -->
+        </div>
+        <div class="recordar_user">
+            <label><input type="checkbox"> Recordar</label>
+            <a href="#">¿Has olvidado la contraseña?</a>
+        </div>
 
-            <script>
-                function leerInput() {
-                     var usuario_metido = document.getElementById("username");
-                     var valor = usuario_metido.value;
-                     console.log("Valor del input-box:", valor);
-                     return usuario_metido
-                }
-            </script>
+        <script>
+            function leerInput() {
+                var usuario_metido = document.getElementById("username");
+                var valor = usuario_metido.value;
+                console.log("Valor del input-box:", valor);
+                return usuario_metido
+            }
+        </script>
 
-            <!--Boton de Login-->
-            <button type="submit" onclick="leerInput()" class="login_button"> <a href="/appDeustotil_Tech/buscar/{{ usuario_metido }}"> Iniciar Sesión </a></button>
+        <!--Boton de Login-->
+        <button type="submit" onclick="leerInput()" class="login_button"><a
+                href="/appDeustotil_Tech/buscar/{{ usuario_metido }}"> Iniciar Sesión </a></button>
 
-            {% if usuario %}
+        {% if usuario %}
 
-                {% for usuario in usuario %}
+            {% for usuario in usuario %}
 
-                    <p> {{ usuario.user }}</p>
-                    <p> {{ usuario.password }}</p>
+                <p> {{ usuario.user }}</p>
+                <p> {{ usuario.password }}</p>
 
-                {% endfor %}
+            {% endfor %}
 
-            {% else %}
-                    <p>No hay ningun empleado</p>
-            {% endif %}
+        {% else %}
+            <p>No hay ningún empleado</p>
+        {% endif %}
 
 
 
-            <!--Opción de registrarse-->
-            <div class="link_nuevo_usuario">
-                <p>No tienes una cuenta?
-                    <a href="#">Creala aquí!</a>
-                </p>
-            </div>
-        </form>
-    </div>
+        <!--Opción de registrarse-->
+        <div class="link_nuevo_usuario">
+            <p>¿No tienes una cuenta?
+                <a href="#">¡Creala aquí!</a>
+            </p>
+        </div>
+    </form>
+</div>
 
 </body>
 </html>

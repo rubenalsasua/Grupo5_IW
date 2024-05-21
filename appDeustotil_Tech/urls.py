@@ -7,6 +7,7 @@ from appDeustotil_Tech.views import (
 )
 from appDeustotil_Tech.views import ProyectoDetailView, ProyectoListView
 from appDeustotil_Tech.views import TareaListView, TareaDetailView
+from appDeustotil_Tech.views import mandar_email
 
 urlpatterns = [
 
@@ -23,4 +24,5 @@ urlpatterns = [
     path("/proyecto/<int:pk>", ProyectoDetailView.as_view(), name="proyecto-show"),
     path("/tareas", TareaListView.as_view(), name="tarea-list"),
     path("/tarea/<int:pk>", TareaDetailView.as_view(), name="tarea-show"),
+    path("/proyectos/mandaremail", mandar_email, name="email-informe-proyectos"),
 ]

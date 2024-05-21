@@ -27,7 +27,6 @@ body {
 }
 
 
-
 /**/
 /* HEADER -- Estilos del menu CSS */
 
@@ -64,7 +63,7 @@ header {
     margin-left: 2.5rem;
 }
 
-                     /* Logo Pequeño Tienda */
+/* Logo Pequeño Tienda */
 
 .deusto_mini_logo {
 
@@ -72,7 +71,7 @@ header {
     width: 3.25rem;
 }
 
-.container .titulo_deusto a{
+.container .titulo_deusto a {
     font-size: 1.4rem;
     color: whitesmoke;
     justify-content: left;
@@ -81,7 +80,7 @@ header {
     margin-left: 1rem;
 }
 
-.container .logo_deusto{
+.container .logo_deusto {
     display: flex;
     align-items: center;
 }
@@ -94,9 +93,9 @@ header {
     flex: 1;
 }
 
-          /* Boton de Login */
+/* Boton de Login */
 
-.login_button{
+.login_button {
     background-color: orange;
     color: white;
     padding: 0.5rem 1rem;
@@ -109,9 +108,9 @@ header {
 
 }
 
-       /*Submenús*/
+/*Submenús*/
 
-             /* Submenú empleado*/
+/* Submenú empleado*/
 .submenu_empleados {
     display: none;
     position: absolute;
@@ -124,6 +123,7 @@ header {
 .lista_menu li:hover .submenu_empleados {
     display: block;
 }
+
 .has-submenu:hover .submenu_empleados {
     display: block;
 }
@@ -378,15 +378,10 @@ div .caja {
     margin-left: 4rem;
 }
 
-
 th,
 td {
-
-
     padding: 1rem;
-
-
-    font-size: 2rem;
+    font-size: 1.25rem;
     text-align: center;
 }
 
@@ -863,24 +858,67 @@ th {
     background-color: rgb(243, 208, 144);
 }
 
+.container-botonEmail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonEmail {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50%;
+    background-color: rgb(243, 208, 144);
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 /*FINAL DE PROYECTO LIST*/
-
-
-
-
-
-
-
 
 
 /*ESTILOS GENERALES PARA LOS CREATE*/
 
+.titulo_create{
+    text-align: center;
+    padding: 1rem;
+}
+
 .nuevop {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1.1);
     text-align: center;
     font-size: 2rem;
     margin-right: 33rem;
     margin-left: 33rem;
     margin-bottom: 2rem;
+}
+
+.nuevop input[type="submit"] {
+    background-color: rgb(243, 208, 144);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nuevop input[type="submit"]:hover {
+    background-color: #2F4F4F;
+    color: white;
+}
+
+.nuevop input, .nuevop select, .nuevop textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 /*FIN DE LOS CREATE*/
@@ -919,13 +957,6 @@ th {
 
 
 /*FIN INDEX*/
-
-
-
-
-
-
-
 
 
 /*INICIO DE PROYECTO DETAIL*/
