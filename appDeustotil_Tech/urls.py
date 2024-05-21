@@ -3,14 +3,17 @@ from . import views
 from appDeustotil_Tech.views import (
     EmpleadoDetailView,
     EmpleadoListView,
-    EmpleadoCreateView, ProyectoCreateView, TareaCreateView,
+    EmpleadoCreateView, ProyectoCreateView, TareaCreateView, UsuarioDetailView
 )
 from appDeustotil_Tech.views import ProyectoDetailView, ProyectoListView
 from appDeustotil_Tech.views import TareaListView, TareaDetailView
 
 urlpatterns = [
-    # ej: /miApp/
-    path("/", views.index, name="index"),
+
+    path("/", views.login, name="login"),
+    path('/buscar/<str:user>/', views.BuscarUser, name='buscar-user'),
+    path("/login", UsuarioDetailView.as_view(), name="usuario-detail"),
+    path("/index", views.index, name="index"),
     path("/proyectos", ProyectoListView.as_view(), name="proyecto-list"),
     path("/empleado/<int:pk>", EmpleadoDetailView.as_view(), name="empleado-show"),
     path("/empleados", EmpleadoListView.as_view(), name="empleado-list"),

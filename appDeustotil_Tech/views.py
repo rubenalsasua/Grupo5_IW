@@ -13,10 +13,14 @@ from appDeustotil_Tech.forms import EmpleadoForm, ProyectoForm, TareaForm
 from appDeustotil_Tech.models import Proyecto
 from appDeustotil_Tech.models import Empleado
 from appDeustotil_Tech.models import Tarea
+from appDeustotil_Tech.models import Usuario
 
 
 # Create your views here.
 
+
+def login(request):
+    return render(request, "PaginaLogin.html")
 
 def index(request):
     return render(request, "appDeustotil_Tech/index.html")
@@ -82,6 +86,30 @@ class TareaDetailView(DetailView):
     template_name = "appDeustotil_Tech/tarea_detail.html"
     context_object_name = "tarea"
 
+
+# LOGIN VIEWS (obtener los registros de la BBDD)
+
+def ValidarUser(request):
+
+    user = Usuario.objects.all()
+    print(user)
+    context_object_name = "usuario"
+    return render(request, 'PaginaLogin.html')
+
+class UsuarioDetailView(DetailView):
+
+    model = Usuario
+    template_name = "PaginaLogin.html"
+    context_object_name = "usuario"
+
+def BuscarUser(request, usuario):
+
+    UserObject = Usuario.objects.filter(user__icontains=usuario)
+    return render(request, 'appDeustotil_Tech/prbLogin.html', {'Usuario': usuario})
+
+
+
+# CREATE VIEWS
 
 class TareaCreateView(View):
     def get(self, request):
