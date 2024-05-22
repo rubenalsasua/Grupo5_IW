@@ -125,9 +125,9 @@ class UsuarioDetailView(DetailView):
     context_object_name = "usuario"
 
 
-def BuscarUser(request, usuario):
-    UserObject = Usuario.objects.filter(user__icontains=usuario)
-    return render(request, 'appDeustotil_Tech/prbLogin.html', {'Usuario': usuario})
+def BuscarUser(request, user):
+    UserObject = Usuario.objects.filter(user__icontains=user)
+    return render(request, 'PaginaLogin.html', {'UserObject': UserObject, 'usuario': user})
 
 
 # CREATE VIEWS
