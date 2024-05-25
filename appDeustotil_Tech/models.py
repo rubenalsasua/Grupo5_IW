@@ -77,7 +77,6 @@ class Tarea(models.Model):
         return f"{self.nombre} {self.estado}"
 
 
-
 class Usuario(models.Model):
     user = models.TextField(max_length=100)
     password = models.TextField(max_length=100)

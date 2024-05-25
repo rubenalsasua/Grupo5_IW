@@ -1,6 +1,5 @@
 
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +8,7 @@
 
 /*INICIO ESTILOS PAGINA LOGIN*/
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,31 +19,32 @@ body{
     background-size: cover;
 }
 
-.container{
+.container {
     width: 420px;
     background: transparent;
     border: 2px solid gray;
     backdrop-filter: blur(20px);
-    box-shadow: 0  0 10px white;
+    box-shadow: 0 0 10px white;
     color: white;
     padding: 50px 30px;
     border-radius: 20px;
 }
 
-.container h1{
+.container h1 {
     font-size: 35px;
     text-align: center;
 }
 
 /*Estilos usuario y contraseña*/
 
-.container .input-box{
+.container .input-box {
     width: 100%;
     height: 50px;
     margin: 30px 0px;
 }
-         /*Dar forma a la entrada de usuario/contraseña */
-.input-box input{
+
+/*Dar forma a la entrada de usuario/contraseña */
+.input-box input {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -58,12 +58,13 @@ body{
 
 }
 
-.input-box input::placeholder{
+.input-box input::placeholder {
     color: white;
 }
-       /*Colocar los iconos de usuario/contraseña*/
 
-.input-box i{
+/*Colocar los iconos de usuario/contraseña*/
+
+.input-box i {
     position: absolute;
     right: 20px;
     top: 50%;
@@ -73,26 +74,27 @@ body{
 
 /*Estilo CheckBox. Función recordar usuario*/
 
-.container .recordar_user{
+.container .recordar_user {
     display: flex;
     justify-content: space-between;
     font-size: 15px;
     margin: 25px;
 }
 
-.recordar_user label input{
+.recordar_user label input {
     color: white;
     text-decoration: none;
 }
-    /*Estilo (Has olvidado la contraseña?)*/
-.recordar_user a{
+
+/*Estilo (Has olvidado la contraseña?)*/
+.recordar_user a {
     text-decoration: none;
     color: white;
 
 }
 
 .recordar_user a:hover {
-    text-decoration:underline;
+    text-decoration: underline;
     color: orange;
 
 }
@@ -115,24 +117,24 @@ body{
     text-decoration: none;
 }
 
-.login_button:hover{
+.login_button:hover {
     box-shadow: 0 0 10px black;
 }
 
 /* Estilo para el link de creación de cuenta*/
-.container .link_nuevo_usuario{
+.container .link_nuevo_usuario {
     font-size: 15px;
     text-align: center;
     margin-top: 25px;
 }
 
-.link_nuevo_usuario p a{
+.link_nuevo_usuario p a {
 
     color: white;
     text-decoration: none;
 }
 
-.link_nuevo_usuario  p a:hover{
+.link_nuevo_usuario p a:hover {
     text-decoration: underline;
     color: orange;
 }

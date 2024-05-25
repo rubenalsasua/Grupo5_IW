@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('appDeustotil_Tech', '0004_alter_empleado_imagen_alter_proyecto_imagen'),
     ]

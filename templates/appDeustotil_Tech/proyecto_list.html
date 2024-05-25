@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
 {% block contenido %}
 
-  {% if proyectos %}
-      <div>
-           <div class="ruta_pagina">
-               <h3> Deustotil_Tech / Proyectos</h3>
-           </div>
-      <div class="container-botonEmail">
-          <a class = "botonEmail" href="proyectos/mandaremail">Enviar informe</a>
-      </div>
-           <div class="container-proyectos">
-               {% for proyectos in proyectos %}
-                     <div class="proyecto">
-                          <img src="{{ proyectos.imagen }}" alt="imagen-proyecto">
-                          <h2>{{ proyectos.nombre }}</h2>
-                          <a href="/appDeustotil_Tech/proyecto/{{ proyectos.id }}" class="boton_acceder"> <i class="fa fa-download" aria-hidden="true"></i> Acceder</a>
-                     </div>
-               {% endfor %}
-          </div>
+    {% if proyectos %}
+        <div>
+            <div class="ruta_pagina">
+                <h3> Deustotil_Tech / Proyectos</h3>
+            </div>
+            <div class="container-botonEmail">
+                <a class="botonEmail" href="proyectos/mandaremail">Enviar informe</a>
+            </div>
+            <div class="container-proyectos">
+                {% for proyectos in proyectos %}
+                    <div class="proyecto">
+                        <img src="{{ proyectos.imagen }}" alt="imagen-proyecto">
+                        <h2>{{ proyectos.nombre }}</h2>
+                        <a href="/appDeustotil_Tech/proyecto/{{ proyectos.id }}" class="boton_acceder"> <i
+                                class="fa fa-download" aria-hidden="true"></i> Acceder</a>
+                    </div>
+                {% endfor %}
+            </div>
 
-      </div>
-  {% else %}
-    <p>No hay ningun proyecto</p>
-  {% endif %}
+        </div>
+    {% else %}
+        <p>No hay ningun proyecto</p>
+    {% endif %}
 {% endblock %}

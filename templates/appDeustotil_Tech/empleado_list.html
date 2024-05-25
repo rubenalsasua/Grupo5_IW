@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
 {% block contenido %}
 
-  {% if empleado %}
-      <div class="general">
-           <div class="ruta_pagina">
-               <h3> Deustotil_Tech / Empleados</h3>
-           </div>
+    {% if empleado %}
+        <div class="general">
+            <div class="ruta_pagina">
+                <h3> Deustotil_Tech / Empleados</h3>
+            </div>
 
-          <ul class="container-empleados">
-               {% for empleado in empleado %}
-                     <div class="empleado">
-                          <img src="{{ empleado.imagen }}" alt="imagen-empleado">
-                          <h2>{{ empleado.nombre }} {{ empleado.apellido }}</h2>
-                          <a href="/appDeustotil_Tech/empleado/{{ empleado.id }}" class="boton_acceder"> <i class="fa fa-download" aria-hidden="true"></i> Acceder</a>
-                     </div>
-               {% endfor %}
-          </ul>
+            <ul class="container-empleados">
+                {% for empleado in empleado %}
+                    <div class="empleado">
+                        <img src="{{ empleado.imagen }}" alt="imagen-empleado">
+                        <h2>{{ empleado.nombre }} {{ empleado.apellido }}</h2>
+                        <a href="/appDeustotil_Tech/empleado/{{ empleado.id }}" class="boton_acceder"> <i
+                                class="fa fa-download" aria-hidden="true"></i> Acceder</a>
+                    </div>
+                {% endfor %}
+            </ul>
 
-      </div>
-  {% else %}
-    <p>No hay ningun empleado</p>
-  {% endif %}
+        </div>
+    {% else %}
+        <p>No hay ningun empleado</p>
+    {% endif %}
 {% endblock %}

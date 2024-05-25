@@ -2,26 +2,28 @@
 
 {% block contenido %}
 
-  {% if proyecto %}
-      <div class="ruta_pagina">
-          <h3> Deustotil_Tech / Proyecto / {{ proyecto.id }}</h3>
-      </div>
+    {% if proyecto %}
+        <div class="ruta_pagina">
+            <h3> Deustotil_Tech / Proyecto / {{ proyecto.id }}</h3>
+        </div>
 
-      <div class="contenedor-proyecto">
-          <section class="contenedor-proyecto-imagen">
-               <img src="{{ proyecto.imagen }}" alt = "imagen-proyecto">
-          </section>
-          <section class="contenedor-proyecto-texto">
-             <h2> {{ proyecto.nombre }} </h2>
-             <h4> FECHAS :  {{ proyecto.fecha_inicio }} {{ proyecto.fecha_fin }}</h4>
-              <h4> DESCRIPCIÓN :  {{ proyecto.descripcion }}</h4>
-             <h4> PRESUPUESTO :  {{ proyecto.presupuesto }} <i class="fa fa-eur" aria-hidden="true"></i></h4>
-              <h4> CLIENTE :  {{ proyecto.datos_cliente }}</h4>
-              <h4> JEFE PROYECTO: <a href="/appDeustotil_Tech/empleado/{{ proyecto.jefe_proyecto_id }}">{{ proyecto.jefe_proyecto }}</a></h4>
-          </section>
-      </div>
+        <div class="contenedor-proyecto">
+            <section class="contenedor-proyecto-imagen">
+                <img src="{{ proyecto.imagen }}" alt="imagen-proyecto">
+            </section>
+            <section class="contenedor-proyecto-texto">
+                <h2> {{ proyecto.nombre }} </h2>
+                <h4> FECHAS : {{ proyecto.fecha_inicio }} {{ proyecto.fecha_fin }}</h4>
+                <h4> DESCRIPCIÓN : {{ proyecto.descripcion }}</h4>
+                <h4> PRESUPUESTO : {{ proyecto.presupuesto }} <i class="fa fa-eur" aria-hidden="true"></i></h4>
+                <h4> CLIENTE : {{ proyecto.datos_cliente }}</h4>
+                <h4> JEFE PROYECTO: <a
+                        href="/appDeustotil_Tech/empleado/{{ proyecto.jefe_proyecto_id }}">{{ proyecto.jefe_proyecto }}</a>
+                </h4>
+            </section>
+        </div>
 
-  {% else %}
-    <p>No existe este proyecto.</p>
-  {% endif %}
+    {% else %}
+        <p>No existe este proyecto.</p>
+    {% endif %}
 {% endblock %}

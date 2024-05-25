@@ -26,7 +26,7 @@ from django.utils.html import strip_tags
 
 
 def login(request):
-    return render(request, "PaginaLogin.html")
+    return render(request, "login.html")
 
 
 def index(request):
@@ -45,17 +45,18 @@ class ProyectoListView(ListView):
 def mandar_email(request):
     subject = 'Informe de proyectos'
     proyectos = Proyecto.objects.all()
-    context = {'proyecto': proyectos}
-    html_message = render_to_string('appDeustotil_Tech/email.html', context)
+    context = {'proyectos': proyectos}
+    html_message = render_to_string('../templates/email.html', context)
     plain_message = strip_tags(html_message)
     from_email = 'grupo5iw.deusto@gmail.com'
-    recipient_list = ['r.alsasua@opendeusto.es']
+    recipient_list = ['r.alsasua@opendeusto.es', 'manel.diaz@opendeusto.es', 'asiernava23@gmail.com']
 
     email = EmailMessage(subject, plain_message, from_email, recipient_list)
     email.content_subtype = 'html'
     email.send()
 
-    return HttpResponse('Correo con plantilla enviado exitosamente.')
+    return HttpResponse('El correo electrónico se ha mandado a ' + recipient_list[0] + recipient_list[1] +
+                        recipient_list[2] + 'correctamente')
 
 
 class ProyectoDetailView(DetailView):
@@ -116,18 +117,18 @@ def ValidarUser(request):
     user = Usuario.objects.all()
     print(user)
     context_object_name = "usuario"
-    return render(request, 'PaginaLogin.html')
+    return render(request, 'login.html')
 
 
 class UsuarioDetailView(DetailView):
     model = Usuario
-    template_name = "PaginaLogin.html"
+    template_name = "login.html"
     context_object_name = "usuario"
 
 
 def BuscarUser(request, user):
     UserObject = Usuario.objects.filter(user__icontains=user)
-    return render(request, 'PaginaLogin.html', {'UserObject': UserObject, 'usuario': user})
+    return render(request, 'login.html', {'UserObject': UserObject, 'usuario': user})
 
 
 # CREATE VIEWS

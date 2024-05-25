@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+th {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #dddddd;
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    text-align: center;
+}
