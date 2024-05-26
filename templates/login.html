@@ -37,29 +37,41 @@
 
             function leerInput() {
 
-                var usuario_metido = document.getElementById("username");
-                var password_intro = document.getElementById("password");
+                var usuario_intro = document.getElementById("username").value;
+                var password_intro = document.getElementById("password").value;
 
-                console.log("Valor del input-box (usuario):", usuario_metido);
+                console.log("Valor del input-box (usuario):", usuario_intro);
                 console.log("Valor del input-box (contraseña):", password_intro);
+                
+                let password_bd = RecupPassword(usuario_intro)
+                
+                if (password_bd === password_intro){
+                    console.log("yes")
+                }else{
+                    console.log("no")
+                }
+                
 
-                // Aquí puedes redirigir a la página deseada
-                window.location.href = "/appDeustotil_Tech/buscar/" + encodeURIComponent(usuario_metido);
 
-                // Validación de la contraseña (si es necesario)
-                {% if user %}
-                    {% for user in UserObject %}
+            } 
+            
+        </script>
+        
+        <script>
+            
+            function RecupPassword(usuario_intro){
+                
+                 window.location.href = "/appDeustotil_Tech/buscar/" + encodeURIComponent(usuario_intro);
+                 
+                 {% for user in UserObject %}
                         let pass_bbdd = "{{ user.password|escapejs }}";
-                        if (pass_bbdd === password_intro) {
-                            console.log("Contraseña correcta");
-                        } else {
-                            console.log("Contraseña incorrecta");
-                        }
-                    {% endfor %}
-                {% endif %}
+                        console.log(pass_bbdd)
+                 {% endfor %}
+            
+            return pass_bbdd
             }
-
-
+            
+            
         </script>
 
 

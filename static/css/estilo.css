@@ -369,6 +369,24 @@ div .caja {
 /*----- FIN DEL BASE.HTML ------*/
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ------TAREA_LIST------- */
 
 
@@ -401,78 +419,25 @@ th {
 /* FIN DE TAREA_LIST*/
 
 
-/*INICIO DE EMPLEADO LIST*/
-
-.container-empleados {
-
-    display: grid; /*  Técnica Display Grid */
-    /* 3x2 */
-    grid-template-columns: repeat(3, 400px);
-    grid-template-rows: repeat(3, 470px);
-
-    gap: 40px;
-    padding: 20px;
-    background: whitesmoke;
-    height: 1450px;
-    margin-top: 100px;
-
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-
-}
 
 
-/* empleados */
-.empleado {
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    height: 400px;
-    text-align: center;
-}
-
-/*Cuando pasamos cursor por encima*/
-.empleado:hover {
-    border-color: #2F4F4F;
-    box-shadow: 0 0 10px #2F4F4F;
-    /*background-color: #b1cdcd;*/
-}
-
-/*Retocamos la imagen (250x250)*/
-.empleado img {
-    width: 350px;
-    height: 250px;
-    border-radius: 5px;
-}
-
-.empleado h2 {
-    font-size: 22px;
-    font-weight: 200;
-    padding-top: 15px;
-    margin-bottom: 15px;
-}
 
 
-/*Estilo botón de comprar*/
 
-.boton_acceder {
-    background-color: #2F4F4F;
-    color: white;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    text-decoration: none;
-    border-radius: 10px;
 
-}
 
-.boton_acceder:hover {
-    color: black;
-    background-color: rgb(243, 208, 144);
-}
+
+
+
+
+
+
+
+
+
 
 /*INICIO DE EMPLEADO LIST*/
+
 
 .container-empleados {
 
@@ -569,6 +534,22 @@ th {
 
 /*FINAL DE EMPLEADO LIST*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*INICIO EMPLEADO-DETAIL*/
 
 .contenedor-empleado {
@@ -661,6 +642,24 @@ th {
 
 /*FINAL DE EMPLEADO-DETAIL*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*IMAGEN DEL PRODUCTO*/
 
 .contenedor-empleado-imagen {
@@ -710,7 +709,23 @@ th {
 /*FINAL DE EMPLEADO-DETAIL*/
 
 
-/*INICIO PROYECTO LIST*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*INICIO PROYECTO LIST*/
@@ -737,7 +752,7 @@ th {
 }
 
 
-/* empleados */
+/* proyectos */
 .proyecto {
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -880,6 +895,22 @@ th {
 /*FINAL DE PROYECTO LIST*/
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*ESTILOS GENERALES PARA LOS CREATE*/
 
 .titulo_create {
@@ -923,6 +954,21 @@ th {
 
 /*FIN DE LOS CREATE*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*INDEX*/
 
 .info-box {
@@ -955,8 +1001,76 @@ th {
     background-color: white;
 }
 
+     /*SLIDER*/
+
+/*ESTILOS FOTOS TORNILLOS*/
+
+main .slider{
+    width: 1700px;
+    height: auto;
+    margin: 1px 1px;
+}
+
+.slider ul{
+    display: flex;
+    padding: 0;
+    width: 100%;
+    animation: slide 25s infinite alternate ease-in-out;
+}
+
+.slider li {
+
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.slider img{
+    width: 1700px;
+    height: 800px;
+
+}
+
+@keyframes slide {
+    0% {margin-left: 0;}
+    15%{margin-left: 0;}
+
+    18%{ margin-left: -100%;}
+    32%{ margin-left: -100%;}
+
+    35%{ margin-left: -200%;}
+    50%{ margin-left: -200%;}
+
+    53%{ margin-left: -300%;}
+    68%{ margin-left: -300%;}
+
+    71%{ margin-left: -400%;}
+    85%{ margin-left: -400%;}
+
+    88%{ margin-left: -500%;}
+    100%{ margin-left: -500%;}
+
+}
+
 
 /*FIN INDEX*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*INICIO DE PROYECTO DETAIL*/
@@ -985,7 +1099,7 @@ th {
 }
 
 
-/*TEXTO DEL EMPLEADO*/
+/*TEXTO DEL PROYECTO*/
 
 .contenedor-proyecto-texto {
     flex: 1; /* El contenido principal ocupa el espacio restante */
