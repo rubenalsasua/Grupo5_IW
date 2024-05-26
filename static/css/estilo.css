@@ -111,7 +111,7 @@ header {
 /*Submenús*/
 
 /* Submenú empleado*/
-.submenu_empleados {
+.submenu {
     display: none;
     position: absolute;
     background-color: #2F4F4F;
@@ -120,15 +120,15 @@ header {
     z-index: 1000;
 }
 
-.lista_menu li:hover .submenu_empleados {
+.lista_menu li:hover .submenu {
     display: block;
 }
 
-.has-submenu:hover .submenu_empleados {
+.has-submenu:hover .submenu {
     display: block;
 }
 
-.submenu_empleados li {
+.submenu li {
     padding: 0.5rem 1rem;
 }
 
