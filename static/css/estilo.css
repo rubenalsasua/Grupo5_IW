@@ -369,24 +369,6 @@ div .caja {
 /*----- FIN DEL BASE.HTML ------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ------TAREA_LIST------- */
 
 
@@ -417,23 +399,6 @@ th {
 
 
 /* FIN DE TAREA_LIST*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*INICIO DE EMPLEADO LIST*/
@@ -535,21 +500,6 @@ th {
 /*FINAL DE EMPLEADO LIST*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*INICIO EMPLEADO-DETAIL*/
 
 .contenedor-empleado {
@@ -643,23 +593,6 @@ th {
 /*FINAL DE EMPLEADO-DETAIL*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*IMAGEN DEL PRODUCTO*/
 
 .contenedor-empleado-imagen {
@@ -707,25 +640,6 @@ th {
 
 
 /*FINAL DE EMPLEADO-DETAIL*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*INICIO PROYECTO LIST*/
@@ -895,22 +809,6 @@ th {
 /*FINAL DE PROYECTO LIST*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*ESTILOS GENERALES PARA LOS CREATE*/
 
 .titulo_create {
@@ -955,20 +853,6 @@ th {
 /*FIN DE LOS CREATE*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*INDEX*/
 
 .info-box {
@@ -1001,17 +885,17 @@ th {
     background-color: white;
 }
 
-     /*SLIDER*/
+/*SLIDER*/
 
 /*ESTILOS FOTOS TORNILLOS*/
 
-main .slider{
+main .slider {
     width: 1700px;
     height: auto;
     margin: 1px 1px;
 }
 
-.slider ul{
+.slider ul {
     display: flex;
     padding: 0;
     width: 100%;
@@ -1025,52 +909,59 @@ main .slider{
     position: relative;
 }
 
-.slider img{
+.slider img {
     width: 1700px;
     height: 800px;
 
 }
 
 @keyframes slide {
-    0% {margin-left: 0;}
-    15%{margin-left: 0;}
+    0% {
+        margin-left: 0;
+    }
+    15% {
+        margin-left: 0;
+    }
 
-    18%{ margin-left: -100%;}
-    32%{ margin-left: -100%;}
+    18% {
+        margin-left: -100%;
+    }
+    32% {
+        margin-left: -100%;
+    }
 
-    35%{ margin-left: -200%;}
-    50%{ margin-left: -200%;}
+    35% {
+        margin-left: -200%;
+    }
+    50% {
+        margin-left: -200%;
+    }
 
-    53%{ margin-left: -300%;}
-    68%{ margin-left: -300%;}
+    53% {
+        margin-left: -300%;
+    }
+    68% {
+        margin-left: -300%;
+    }
 
-    71%{ margin-left: -400%;}
-    85%{ margin-left: -400%;}
+    71% {
+        margin-left: -400%;
+    }
+    85% {
+        margin-left: -400%;
+    }
 
-    88%{ margin-left: -500%;}
-    100%{ margin-left: -500%;}
+    88% {
+        margin-left: -500%;
+    }
+    100% {
+        margin-left: -500%;
+    }
 
 }
 
 
 /*FIN INDEX*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*INICIO DE PROYECTO DETAIL*/
@@ -1142,7 +1033,11 @@ main .slider{
 
 
 /*FINAL DE PROYECTO DETAIL*/
-
-
+.titulo_create {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 

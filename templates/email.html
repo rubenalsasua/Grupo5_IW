@@ -2,39 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Informe de proyectos</title>
-    <link rel="stylesheet" href="../static/css/email.css">
+    <title>Informe de proyectos: </title>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Cliente</th>
-        <th>Jefe de proyecto</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% if proyectos %}
-
+{% if proyectos %}
+    <ul>
         {% for proyectos in proyectos %}
-            <tr>
-                <td>{{ proyectos.nombre }}</td>
-                <td>{{ proyectos.descripcion }}</td>
-                <td>{{ proyectos.datos_cliente }}</td>
-                <td>{{ proyectos.jefe_proyecto }}</td>
-            </tr>
-                        
-
+            <li>{{ proyectos.nombre }},</li>
         {% endfor %}
-
-    {% else %}
-        <p>No hay ningún proyecto</p>
-    {% endif %}
-    </tbody>
-
-</table>
-
+        <p>.</p>
+    </ul>
+{% else %}
+    <p>No hay ningún proyecto.</p>
+{% endif %}
 </body>
 </html>

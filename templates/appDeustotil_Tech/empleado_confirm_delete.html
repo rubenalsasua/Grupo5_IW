@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-    <h2>¿Seguro que quieres borrar el empleado "{{ object }}"?</h2>
+    <link rel="stylesheet" href="">
+    <h2 class="titulo_create">¿Seguro que quieres borrar el empleado "{{ object }}"?</h2>
     <form method="post">{% csrf_token %}
-        <button type="submit">Confirmar</button>
+        <input type="submit" value="Confirmar"/>
     </form>
-    <a href="{% url 'index' %}">Cancelar</a>
+    <a class="cancelar-borrado" href="{% url 'index' %}">Cancelar</a>
 {% endblock %}
