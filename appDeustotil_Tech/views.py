@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.urls import reverse_lazy
+from django.http import JsonResponse
 from django.views.generic import (
     ListView,
     DetailView,
@@ -77,6 +78,20 @@ class EmpleadoListView(ListView):
     template_name = "appDeustotil_Tech/empleado_list.html"
     context_object_name = "empleado"
 
+def buscar_empleado(request):
+    nombre = request.GET.get('nombre', '')
+    apellido = request.GET.get('apellido', '')
+    empleados = []
+
+    if nombre and apellido:
+        empleados = Empleado.objects.filter(nombre__icontains=nombre, apellido__icontains=apellido)
+    elif nombre:
+        empleados = Empleado.objects.filter(nombre__icontains=nombre)
+    elif apellido:
+        empleados = Empleado.objects.filter(apellido__icontains=apellido)
+
+    return render(request, 'appDeustotil_Tech/empleado_buscar.html', {'empleados': empleados})
+
 
 class EmpleadoCreateView(View):
     def get(self, request):
@@ -94,6 +109,16 @@ class EmpleadoCreateView(View):
             "appDeustotil_Tech/empleado_create.html",
             {"formulario": formulario},
         )
+
+class EmpleadoBuscar(View):
+    def get(self, request, *args, **kwargs):
+        nombre = request.GET.get('nombre', '')
+        apellido = request.GET.get('apellido', '')
+
+        if Empleado.objects.filter(nombre=nombre, apellido=apellido).exists():
+            return JsonResponse({'exists': True})
+        else:
+            return JsonResponse({'exists': False})
 
 
 # TAREA VIEWS

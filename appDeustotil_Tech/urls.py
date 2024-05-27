@@ -18,6 +18,7 @@ urlpatterns = [
     path("/index", views.index, name="index"),
     path("/proyectos", ProyectoListView.as_view(), name="proyecto-list"),
     path("/empleado/<int:pk>", EmpleadoDetailView.as_view(), name="empleado-show"),
+    path('/empleado/buscar', views.buscar_empleado, name='buscar_empleado'),
     path("/empleados", EmpleadoListView.as_view(), name="empleado-list"),
     path("/empleado/create", EmpleadoCreateView.as_view(), name="empleado-create"),
     path("/proyecto/create", ProyectoCreateView.as_view(), name="proyecto-create"),

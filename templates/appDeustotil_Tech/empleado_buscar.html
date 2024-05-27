@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <h2 class="titulo_create">Buscar empleado</h2>
+        <form id="searchForm" method="get" action="{% url 'buscar_empleado' %}">
+            <input type="text" id="nombre_intro" name="nombre" placeholder="Nombre">
+            <input type="text" id="apellido_intro" name="apellido" placeholder="Apellido">
+            <button type="submit" >Buscar</button>
+        </form>
+
+    <div id="result">
+        {% if empleados %}
+            <div class="general">
+                <div class="ruta_pagina">
+                    <h3> Deustotil_Tech / Empleados</h3>
+                </div>
+
+                <ul class="container-empleados">
+                    {% for empleado in empleados %}
+                        <h3>El empleado {{ empleado.nombre }} {{ empleado.apellido }} existe.</h3>
+                        <button><a href="/appDeustotil_Tech/empleado/{{ empleado.id }}">Visitar</a></button>
+                        
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <p>No hay ningun empleado</p>
+        {% endif %}
+    </div>
+
+{% endblock %}
