@@ -10,7 +10,7 @@
 <body>
 <h1>Resultados de la Búsqueda</h1>
 <ul>
-    {% for usuario in usuario %}
+    {% for usuario in usuarios %}
         <li>{{ usuario.user }} - ${{ usuario.password }}</li>
     {% endfor %}
 </ul>

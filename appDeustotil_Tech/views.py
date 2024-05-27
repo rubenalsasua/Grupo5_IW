@@ -124,15 +124,13 @@ class EmpleadoCreateView(View):
             {"formulario": formulario},
         )
 
-class EmpleadoBuscar(View):
-    def get(self, request, *args, **kwargs):
-        nombre = request.GET.get('nombre', '')
-        apellido = request.GET.get('apellido', '')
 
-        if Empleado.objects.filter(nombre=nombre, apellido=apellido).exists():
-            return JsonResponse({'exists': True})
-        else:
-            return JsonResponse({'exists': False})
+
+
+
+
+
+
 
 
 # TAREA VIEWS
@@ -152,22 +150,24 @@ class TareaDetailView(DetailView):
 
 # LOGIN VIEWS (obtener los registros de la BBDD)
 
-def ValidarUser(request):
-    user = Usuario.objects.all()
-    print(user)
-    context_object_name = "usuario"
-    return render(request, 'login.html')
-
-
 class UsuarioDetailView(DetailView):
     model = Usuario
     template_name = "login.html"
     context_object_name = "usuario"
 
+def buscar_usuario(request):
+    user = request.GET.get('user', '')
+    password = request.GET.get('password', '')
+    Usuarios = []
 
-def BuscarUser(request, user):
-    UserObject = Usuario.objects.filter(user__icontains=user)
-    return render(request, 'login.html', {'UserObject': UserObject, 'usuario': user})
+    if user and password:
+        Usuarios = Usuario.objects.filter(user__icontains=user, password__icontains=password)
+    elif user:
+        Usuarios = Usuario.objects.filter(user__icontains=user)
+    elif password:
+        Usuarios = Usuario.objects.filter(password__icontains=password)
+
+    return render(request, 'appDeustotil_Tech/prbLogin.html', {'usuarios': Usuarios})
 
 
 # CREATE VIEWS

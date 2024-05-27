@@ -13,7 +13,7 @@
 
 <!--Pantallita de Login -->
 <div class="container">
-    <form action="">
+    <form action="{% url 'buscar_usuario' %}">
         <h1>Iniciar Sesión</h1>
         <!--Username/Password/Checkbox...-->
         <div class="input-box">
@@ -31,49 +31,23 @@
         </div>
 
         <!--Boton de Login-->
-        <button type="submit" onclick="leerInput()" class="login_button"> Iniciar Sesión</button>
+        <button type="submit" onclick="" class="login_button"> Iniciar Sesión</button>
+    </form>
 
-        <script>
-
-            function leerInput() {
-
-                var usuario_intro = document.getElementById("username").value;
-                var password_intro = document.getElementById("password").value;
-
-                console.log("Valor del input-box (usuario):", usuario_intro);
-                console.log("Valor del input-box (contraseña):", password_intro);
+       <div id="result">
+                 {% if usuarios %}
+                     <ul>
+                           {% for usuario in usuarios %}
+                                 <h3>{{ usuario.user }} {{ usuarios.password}}</h3>
+                          {% endfor %}
+                          
+                     </ul>
                 
-                let password_bd = RecupPassword(usuario_intro)
-                
-                if (password_bd === password_intro){
-                    console.log("yes")
-                }else{
-                    console.log("no")
-                }
-                
-
-
-            } 
-            
-        </script>
-        
-        <script>
-            
-            function RecupPassword(usuario_intro){
-                
-                 window.location.href = "/appDeustotil_Tech/buscar/" + encodeURIComponent(usuario_intro);
-                 
-                 {% for user in UserObject %}
-                        let pass_bbdd = "{{ user.password|escapejs }}";
-                        console.log(pass_bbdd)
-                 {% endfor %}
-            
-            return pass_bbdd
-            }
-            
-            
-        </script>
-
+                 {% else %}
+                <p>No hay ningun user</p>
+                 {% endif %}
+             
+       </div>
 
         <!--Opción de registrarse-->
         <div class="link_nuevo_usuario">
@@ -81,7 +55,7 @@
                 <a href="#">Creala aquí!</a>
             </p>
         </div>
-    </form>
+    
 </div>
 
 </body>
