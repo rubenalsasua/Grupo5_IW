@@ -9,7 +9,7 @@ function toggleMenu() {
 }
 document.getElementById('aumentar').addEventListener('click',function (event){
     let elementos = document.querySelectorAll("a");
-    for (let instancia in elementos){
-        console.log(instancia.length)
-    }
+        for (let i in elementos) {
+            console.log(getComputedStyle(elementos[i]));
+        }
 });
