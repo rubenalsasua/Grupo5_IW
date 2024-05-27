@@ -8,6 +8,8 @@ function toggleMenu() {
     }
 }
 document.getElementById('aumentar').addEventListener('click',function (event){
-    event.preventDefault();
-    console.log("Hola !")
+    let elementos = document.querySelectorAll("a");
+    for (let instancia in elementos){
+        console.log(instancia.length)
+    }
 });
