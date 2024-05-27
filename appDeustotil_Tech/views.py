@@ -9,8 +9,8 @@ from django.views.generic import (
     UpdateView,
     CreateView,
 )
-from appDeustotil_Tech.forms import EmpleadoForm, ProyectoForm, TareaForm
-from appDeustotil_Tech.models import Proyecto
+from appDeustotil_Tech.forms import EmpleadoForm, ProyectoForm, TareaForm, ClienteForm
+from appDeustotil_Tech.models import Proyecto, Cliente
 from appDeustotil_Tech.models import Empleado
 from appDeustotil_Tech.models import Tarea
 from appDeustotil_Tech.models import Usuario
@@ -167,3 +167,102 @@ class ProyectoCreateView(View):
             "appDeustotil_Tech/proyecto_create.html",
             {"formulario": formulario},
         )
+
+
+class ClienteCreateView(View):
+    def get(self, request):
+        formulario = ClienteForm()
+        context = {"formulario": formulario}
+        return render(request, "appDeustotil_Tech/cliente_create.html", context)
+
+    def post(self, request):
+        formulario = ClienteForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect("index")
+        return render(
+            request,
+            "appDeustotil_Tech/cliente_create.html",
+            {"formulario": formulario},
+        )
+
+
+class ProyectoUpdateView(UpdateView):
+    model = Proyecto
+
+    def get(self, request, pk):
+        proyecto = Proyecto.objects.get(id=pk)
+        formulario = ProyectoForm(instance=proyecto)
+        context = {
+            'formulario': formulario,
+            'proyecto': proyecto
+        }
+        return render(request, 'appDeustotil_Tech/proyecto_update.html', context)
+
+    def post(self, request, pk):
+        proyecto = Proyecto.objects.get(id=pk)
+        formulario = ProyectoForm(request.POST, instance=proyecto)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('proyecto-show', proyecto.id)
+        else:
+            formulario = ProyectoForm(instance=proyecto)
+        return render(request, 'appDeustotil_Tech/proyecto_update.html', {'formulario': formulario})
+
+
+class EmpleadoUpdateView(UpdateView):
+    model = Empleado
+
+    def get(self, request, pk):
+        empleado = Empleado.objects.get(id=pk)
+        formulario = EmpleadoForm(instance=empleado)
+        context = {
+            'formulario': formulario,
+            'proyecto': empleado
+        }
+        return render(request, 'appDeustotil_Tech/empleado_update.html', context)
+
+    def post(self, request, pk):
+        empleado = Empleado.objects.get(id=pk)
+        formulario = EmpleadoForm(request.POST, instance=empleado)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('empleado-show', empleado.id)
+        else:
+            formulario = EmpleadoForm(instance=empleado)
+        return render(request, 'appDeustotil_Tech/empleado_update.html', {'formulario': formulario})
+
+
+class TareaUpdateView(UpdateView):
+    model = Tarea
+
+    def get(self, request, pk):
+        tarea = Tarea.objects.get(id=pk)
+        formulario = TareaForm(instance=tarea)
+        context = {
+            'formulario': formulario,
+            'tarea': tarea
+        }
+        return render(request, 'appDeustotil_Tech/tarea_update.html', context)
+
+    def post(self, request, pk):
+        tarea = Tarea.objects.get(id=pk)
+        formulario = TareaForm(request.POST, instance=tarea)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('tarea-show', tarea.id)
+        else:
+            formulario = TareaForm(instance=tarea)
+        return render(request, 'appDeustotil_Tech/tarea_update.html', {'formulario': formulario})
+
+class ProyectoDeleteView(DeleteView):
+    model = Proyecto
+    success_url = reverse_lazy('index')
+
+class EmpleadoDeleteView(DeleteView):
+    model = Empleado
+    success_url = reverse_lazy('index')
+
+class TareaDeleteView(DeleteView):
+    model = Tarea
+    success_url = reverse_lazy('index')

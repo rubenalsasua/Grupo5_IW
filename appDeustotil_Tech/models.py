@@ -3,6 +3,21 @@ from django.db import models
 
 # Create your models here.
 
+class Cliente(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    telefono = models.IntegerField(max_length=100)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.nombre} {self.email}"
+
+    class Meta:
+        verbose_name = "Cliente"
+        verbose_name_plural = "Clientes"
+        ordering = ["-created"]
+
 
 class Empleado(models.Model):
     dni = models.CharField(max_length=100)
@@ -10,7 +25,7 @@ class Empleado(models.Model):
     apellido = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     telefono = models.IntegerField(max_length=100)
-    imagen = models.CharField(max_length=300, default=False)
+    imagen = models.CharField(max_length=300)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -29,14 +44,14 @@ class Proyecto(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     presupuesto = models.IntegerField()
-    datos_cliente = models.TextField(max_length=100)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, null=True, blank=True)
     jefe_proyecto = models.ForeignKey(Empleado, on_delete=models.CASCADE)
-    imagen = models.CharField(max_length=300, default=False)
+    imagen = models.CharField(max_length=300)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.nombre} {self.datos_cliente}"
+        return f"{self.nombre} {self.cliente}"
 
     class Meta:
         verbose_name = "Proyecto"
@@ -88,5 +103,5 @@ class Usuario(models.Model):
 
     class Meta:
         verbose_name = "Usuario"
-        verbose_name_plural = "Usuario"
+        verbose_name_plural = "Usuarios"
         ordering = ["-created"]
