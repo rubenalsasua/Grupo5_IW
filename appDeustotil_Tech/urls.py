@@ -24,6 +24,7 @@ urlpatterns = [
     path("/proyecto/create", ProyectoCreateView.as_view(), name="proyecto-create"),
     path("/tarea/create", TareaCreateView.as_view(), name="tarea-create"),
     path("/proyecto/<int:pk>", ProyectoDetailView.as_view(), name="proyecto-show"),
+    path('/proyecto/buscar', views.buscar_proyecto, name='buscar_proyecto'),
     path("/tareas", TareaListView.as_view(), name="tarea-list"),
     path("/tarea/<int:pk>", TareaDetailView.as_view(), name="tarea-show"),
     path("/proyectos/mandaremail", mandar_email, name="email-informe-proyectos"),

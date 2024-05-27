@@ -853,6 +853,19 @@ th {
 /*FIN DE LOS CREATE*/
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*INDEX*/
 
 .info-box {
@@ -964,6 +977,20 @@ main .slider {
 /*FIN INDEX*/
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*INICIO DE PROYECTO DETAIL*/
 
 
@@ -1039,5 +1066,185 @@ main .slider {
     margin-bottom: 20px;
     text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*INICIO BUSCAR EMPLEADO*/
+
+.contenedor-general-buscar-empleado {
+    display: flex;
+    margin: 15px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 200px;
+}
+
+.container-buscar-empleado {
+    width: 35%;
+    margin: 30px;
+    padding: 10px;
+   /* border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;*/
+}
+
+.container-buscar-empleado input[type="text"] {
+   display: flex;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+
+.container-buscar-empleado h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container-buscar-empleado-resultado {
+    width: 55%;
+    margin: 20px;
+    padding: 10px;
+
+}
+
+.container-buscar-empleado-resultado img{
+    position: relative; /*podemos desplazar la imagen*/
+    width: 450px;
+    height: 380px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.container-buscar-empleado-resultado h3 {
+    font-size: 24px;
+    font-weight: 200;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.container-buscar-empleado-resultado h3:hover {
+    color: orange;
+}
+
+
+.ruta_pagina h3 {
+    font-size: 24px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #2F4F4F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*INICIO BUSCAR PROYECTO*/
+
+.contenedor-general-buscar-proyecto {
+    display: flex;
+    margin: 15px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 200px;
+}
+
+.container-buscar-proyecto {
+    width: 35%;
+    margin: 30px;
+    padding: 10px;
+   /* border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;*/
+}
+
+.container-buscar-proyecto input[type="text"] {
+   display: flex;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+
+.container-buscar-proyecto h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container-buscar-proyecto-resultado {
+    width: 55%;
+    margin: 20px;
+    padding: 10px;
+
+}
+
+.container-buscar-proyecto-resultado img{
+    position: relative; /*podemos desplazar la imagen*/
+    width: 450px;
+    height: 380px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.container-buscar-proyecto-resultado h3 {
+    font-size: 24px;
+    font-weight: 200;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.container-buscar-proyecto-resultado h3:hover {
+    color: orange;
+}
+
+
+.ruta_pagina h3 {
+    font-size: 24px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #2F4F4F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+
 
 

@@ -66,6 +66,20 @@ class ProyectoDetailView(DetailView):
     context_object_name = "proyecto"
 
 
+def buscar_proyecto(request):
+    nombre = request.GET.get('nombre', '')
+    Proyectos = []
+
+    if nombre:
+        Proyectos = Proyecto.objects.filter(nombre__icontains=nombre)
+
+    return render(request, 'appDeustotil_Tech/proyecto_buscar.html', {'proyectos': Proyectos})
+
+
+
+
+
+
 # EMPLEADOS VIEWS
 class EmpleadoDetailView(DetailView):
     model = Empleado

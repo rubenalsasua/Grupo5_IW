@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <div class="ruta_pagina">
+        <h3> Deustotil_Tech / Proyectos</h3>
+    </div>
+    
+    <div class="contenedor-general-buscar-proyecto">
+          <form class="container-buscar-proyecto" id="searchForm" method="get" action="{% url 'buscar_proyecto' %}">
+               <h3>Buscar proyecto</h3>
+               <input type="text" id="nombre_intro" name="nombre" placeholder="Nombre">
+               <button type="submit" >Buscar</button>
+          </form>
+
+        <div class="container-buscar-proyecto-resultado">
+             <div id="result">
+                 {% if proyectos %}
+                     <ul>
+                           {% for proyecto in proyectos %}
+                                 <h3> <a href="/appDeustotil_Tech/proyecto/{{ proyecto.id }}"></a>{{ proyecto.nombre }}</h3>
+                                 <a href="/appDeustotil_Tech/proyecto/{{ proyecto.id }}"><img src="{{ proyecto.imagen }}" alt="imagen-proyecto"></a>
+                          {% endfor %}
+                          
+                     </ul>
+                
+                 {% else %}
+                <p>No hay ningun proyecto</p>
+                 {% endif %}
+             </div>
+        </div>
+            
+    </div>
+       
+        
+
+{% endblock %}
