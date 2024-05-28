@@ -853,19 +853,6 @@ th {
 /*FIN DE LOS CREATE*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*INDEX*/
 
 .info-box {
@@ -973,7 +960,7 @@ main .slider {
 
 }
 
-              /*TEXTO EN IMAGENES*/
+/*TEXTO EN IMAGENES*/
 
 .texto {
     position: absolute;
@@ -992,32 +979,17 @@ main .slider {
     font-size: 45px;
 }
 
-          /*darle color a los textos donde de #2f4f4f no se vería*/
-div .texto_en_blanco{
+/*darle color a los textos donde de #2f4f4f no se vería*/
+div .texto_en_blanco {
     color: aliceblue;
 }
 
-div .texto_en_negro{
+div .texto_en_negro {
     color: black;
 }
 
 
 /*FIN INDEX*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*INICIO DE PROYECTO DETAIL*/
@@ -1097,17 +1069,6 @@ div .texto_en_negro{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*INICIO BUSCAR EMPLEADO*/
 
 .contenedor-general-buscar-empleado {
@@ -1122,13 +1083,13 @@ div .texto_en_negro{
     width: 35%;
     margin: 30px;
     padding: 10px;
-   /* border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;*/
+    /* border: 1px solid #ccc;
+     border-radius: 5px;
+     background-color: #f9f9f9;*/
 }
 
 .container-buscar-empleado input[type="text"] {
-   display: flex;
+    display: flex;
     width: 200px;
     height: 30px;
     margin-bottom: 10px;
@@ -1148,7 +1109,7 @@ div .texto_en_negro{
 
 }
 
-.container-buscar-empleado-resultado img{
+.container-buscar-empleado-resultado img {
     position: relative; /*podemos desplazar la imagen*/
     width: 450px;
     height: 380px;
@@ -1186,17 +1147,6 @@ button:hover {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*INICIO BUSCAR PROYECTO*/
 
 .contenedor-general-buscar-proyecto {
@@ -1211,13 +1161,13 @@ button:hover {
     width: 35%;
     margin: 30px;
     padding: 10px;
-   /* border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;*/
+    /* border: 1px solid #ccc;
+     border-radius: 5px;
+     background-color: #f9f9f9;*/
 }
 
 .container-buscar-proyecto input[type="text"] {
-   display: flex;
+    display: flex;
     width: 200px;
     height: 30px;
     margin-bottom: 10px;
@@ -1237,7 +1187,7 @@ button:hover {
 
 }
 
-.container-buscar-proyecto-resultado img{
+.container-buscar-proyecto-resultado img {
     position: relative; /*podemos desplazar la imagen*/
     width: 450px;
     height: 380px;

@@ -3,33 +3,36 @@
     <div class="ruta_pagina">
         <h3> Deustotil_Tech / Empleados</h3>
     </div>
-    
+
     <div class="contenedor-general-buscar-empleado">
-          <form class="container-buscar-empleado" id="searchForm" method="get" action="{% url 'buscar_empleado' %}">
-               <h3>Buscar empleado</h3>
-               <input type="text" id="nombre_intro" name="nombre" placeholder="Nombre">
-               <input type="text" id="apellido_intro" name="apellido" placeholder="Apellido">
-               <button type="submit" >Buscar</button>
-          </form>
+        <form class="container-buscar-empleado" id="searchForm" method="get" action="{% url 'buscar_empleado' %}">
+            <h3>Buscar empleado</h3>
+            <input type="text" id="nombre_intro" name="nombre" placeholder="Nombre">
+            <input type="text" id="apellido_intro" name="apellido" placeholder="Apellido">
+            <button type="submit">Buscar</button>
+        </form>
 
         <div class="container-buscar-empleado-resultado">
-             <div id="result">
-                 {% if empleados %}
-                     <ul>
-                           {% for empleado in empleados %}
-                                 <h3> <a href="/appDeustotil_Tech/empleado/{{ empleado.id }}"></a>{{ empleado.nombre }} {{ empleado.apellido }}</h3>
-                                 <a href="/appDeustotil_Tech/empleado/{{ empleado.id }}"><img src="{{ empleado.imagen }}" alt="imagen-empleado"></a>
-                           {% endfor %}
-                     </ul>
-                
-                 {% else %}
-                <p>No hay ningun empleado</p>
-                 {% endif %}
-             </div>
+            <div id="result">
+                {% if empleados %}
+                    <ul>
+                        {% for empleado in empleados %}
+                            <h3>
+                                <a href="/appDeustotil_Tech/empleado/{{ empleado.id }}"></a>{{ empleado.nombre }} {{ empleado.apellido }}
+                            </h3>
+                            <a href="/appDeustotil_Tech/empleado/{{ empleado.id }}"><img src="{{ empleado.imagen }}"
+                                                                                         alt="imagen-empleado"></a>
+                        {% endfor %}
+                    </ul>
+
+                {% else %}
+                    <p>No hay ningun empleado</p>
+                {% endif %}
+            </div>
         </div>
-            
+
     </div>
-       
-        
+
+
 
 {% endblock %}

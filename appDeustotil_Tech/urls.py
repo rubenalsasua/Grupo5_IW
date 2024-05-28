@@ -4,11 +4,9 @@ from appDeustotil_Tech.views import (
     EmpleadoDetailView,
     EmpleadoListView,
     EmpleadoCreateView, ProyectoCreateView, TareaCreateView, UsuarioDetailView, ClienteCreateView, ProyectoUpdateView,
-    EmpleadoUpdateView, TareaUpdateView, ProyectoDeleteView, EmpleadoDeleteView, TareaDeleteView
+    EmpleadoUpdateView, TareaUpdateView, ProyectoDeleteView, EmpleadoDeleteView, TareaDeleteView, ProyectoDetailView,
+    ProyectoListView, TareaListView, TareaDetailView, mandar_email
 )
-from appDeustotil_Tech.views import ProyectoDetailView, ProyectoListView
-from appDeustotil_Tech.views import TareaListView, TareaDetailView
-from appDeustotil_Tech.views import mandar_email
 
 urlpatterns = [
 

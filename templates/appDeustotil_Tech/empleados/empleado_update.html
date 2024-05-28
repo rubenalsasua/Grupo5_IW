@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block contenido %}
     <h2 class="titulo_create">Editar empleado</h2>
-    <form class="nuevop" action="{% url 'empleado-update' empleado.id%}" method="post">
+    <form class="nuevop" action="{% url 'empleado-update' empleado.id %}" method="post">
         {% csrf_token %}
         {{ formulario.errors }}
         {{ formulario.as_p }}

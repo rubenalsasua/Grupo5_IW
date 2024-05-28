@@ -1,29 +1,22 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.http import JsonResponse
 from django.views.generic import (
     ListView,
     DetailView,
     View,
     DeleteView,
     UpdateView,
-    CreateView,
 )
 from appDeustotil_Tech.forms import EmpleadoForm, ProyectoForm, TareaForm, ClienteForm
-from appDeustotil_Tech.models import Proyecto, Cliente
+from appDeustotil_Tech.models import Proyecto
 from appDeustotil_Tech.models import Empleado
 from appDeustotil_Tech.models import Tarea
 from appDeustotil_Tech.models import Usuario
-
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
-
-
-# Create your views here.
 
 
 def login(request):
@@ -76,10 +69,6 @@ def buscar_proyecto(request):
     return render(request, 'appDeustotil_Tech/proyectos/proyecto_buscar.html', {'proyectos': Proyectos})
 
 
-
-
-
-
 # EMPLEADOS VIEWS
 class EmpleadoDetailView(DetailView):
     model = Empleado
@@ -91,6 +80,7 @@ class EmpleadoListView(ListView):
     model = Empleado
     template_name = "appDeustotil_Tech/empleados/empleado_list.html"
     context_object_name = "empleado"
+
 
 def buscar_empleado(request):
     nombre = request.GET.get('nombre', '')
@@ -125,14 +115,6 @@ class EmpleadoCreateView(View):
         )
 
 
-
-
-
-
-
-
-
-
 # TAREA VIEWS
 
 
@@ -154,6 +136,7 @@ class UsuarioDetailView(DetailView):
     model = Usuario
     template_name = "login.html"
     context_object_name = "usuario"
+
 
 def buscar_usuario(request):
     user = request.GET.get('user', '')
@@ -295,13 +278,16 @@ class TareaUpdateView(UpdateView):
             formulario = TareaForm(instance=tarea)
         return render(request, 'appDeustotil_Tech/tareas/tarea_update.html', {'formulario': formulario})
 
+
 class ProyectoDeleteView(DeleteView):
     model = Proyecto
     success_url = reverse_lazy('index')
 
+
 class EmpleadoDeleteView(DeleteView):
     model = Empleado
     success_url = reverse_lazy('index')
+
 
 class TareaDeleteView(DeleteView):
     model = Tarea

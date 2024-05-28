@@ -10,24 +10,24 @@
     <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
-      <div class="container">
-          <form id="searchForm" method="get" action="{% url 'buscar_usuario' %}">
-              <h1>Iniciar Sesión</h1>
-              <!--Username/Password/Checkbox...-->
-              <div class="input-box">
-                  <input type="text" required id="user" name="user" placeholder="Usuario">
-              </div>
-             <div class="input-box">
-                 <input type="password" required id="password" name="password" placeholder="Contraseña">
-             </div>
+<div class="container">
+    <form id="searchForm" method="get" action="{% url 'buscar_usuario' %}">
+        <h1>Iniciar Sesión</h1>
+        <!--Username/Password/Checkbox...-->
+        <div class="input-box">
+            <input type="text" required id="user" name="user" placeholder="Usuario">
+        </div>
+        <div class="input-box">
+            <input type="password" required id="password" name="password" placeholder="Contraseña">
+        </div>
+
+        <div class="recordar_user">
+            <label><input type="checkbox"> Recordar</label>
+            <a href="#">Has olvidado la contraseña?</a>
+        </div>
               
-              <div class="recordar_user">
-                  <label><input type="checkbox"> Recordar</label>
-                  <a href="#">Has olvidado la contraseña?</a>
-              </div>
-              
-             <button type="submit" class="login_button">Iniciar Sesión</button>
-          </form>
+        <button type="submit" class="login_button">Iniciar Sesión</button>
+    </form>
 
     {% if usuarios %}
         <h2>Resultados de la búsqueda:</h2>
@@ -38,6 +38,6 @@
         </ul>
     {% else %}
     {% endif %}
-      </div>
+</div>
 </body>
 </html>

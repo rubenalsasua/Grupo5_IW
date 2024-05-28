@@ -3,6 +3,8 @@ from django import forms
 from appDeustotil_Tech.models import Proyecto, Empleado, Tarea, Cliente
 
 
+# En los campos 'fields', ponemos los atributos necesarios para evitar un error al modificar.
+
 class ProyectoForm(forms.ModelForm):
     class Meta:
         model = Proyecto
