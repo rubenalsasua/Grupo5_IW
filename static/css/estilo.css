@@ -973,8 +973,37 @@ main .slider {
 
 }
 
+              /*TEXTO EN IMAGENES*/
+
+.texto {
+    position: absolute;
+    width: 420px;
+    height: 110px;
+    top: 90%; /* Ajustar la posición vertical del texto */
+    left: 85%; /* Ajustar la posición horizontal del texto */
+    transform: translate(-50%, -50%);
+    color: #2F4F4F;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    font-size: 18px; /* Ajustar el tamaño de fuente según sea necesario */
+}
+
+.texto h2 {
+    font-size: 45px;
+}
+
+          /*darle color a los textos donde de #2f4f4f no se vería*/
+div .texto_en_blanco{
+    color: aliceblue;
+}
+
+div .texto_en_negro{
+    color: black;
+}
+
 
 /*FIN INDEX*/
+
 
 
 

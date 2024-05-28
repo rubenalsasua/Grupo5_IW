@@ -13,7 +13,7 @@ from appDeustotil_Tech.views import mandar_email
 urlpatterns = [
 
     path("/", views.login, name="login"),
-    path('/login', views.buscar_usuario, name='buscar_usuario'),
+    path('/login/buscar', views.buscar_usuario, name='buscar_usuario'),
     path("/login", UsuarioDetailView.as_view(), name="usuario-detail"),
     path("/index", views.index, name="index"),
     path("/proyectos", ProyectoListView.as_view(), name="proyecto-list"),

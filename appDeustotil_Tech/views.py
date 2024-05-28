@@ -160,14 +160,15 @@ def buscar_usuario(request):
     password = request.GET.get('password', '')
     Usuarios = []
 
-    if user and password:
-        Usuarios = Usuario.objects.filter(user__icontains=user, password__icontains=password)
-    elif user:
-        Usuarios = Usuario.objects.filter(user__icontains=user)
-    elif password:
-        Usuarios = Usuario.objects.filter(password__icontains=password)
+    print(f"user: {user}, password: {password}")
 
-    return render(request, 'appDeustotil_Tech/prbLogin.html', {'usuarios': Usuarios})
+    if user and password:
+        # Utilizar una búsqueda exacta para ambos campos
+        Usuarios = Usuario.objects.filter(user=user, password=password)
+        if Usuarios.exists():
+            return redirect("/appDeustotil_Tech/index")
+
+    return redirect("/appDeustotil_Tech/")
 
 
 # CREATE VIEWS
