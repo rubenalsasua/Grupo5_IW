@@ -39,7 +39,7 @@ def index(request):
 
 class ProyectoListView(ListView):
     model = Proyecto
-    template_name = "appDeustotil_Tech/proyecto_list.html"
+    template_name = "appDeustotil_Tech/proyectos/proyecto_list.html"
     context_object_name = "proyectos"
 
 
@@ -62,7 +62,7 @@ def mandar_email(request):
 
 class ProyectoDetailView(DetailView):
     model = Proyecto
-    template_name = "appDeustotil_Tech/proyecto_detail.html"
+    template_name = "appDeustotil_Tech/proyectos/proyecto_detail.html"
     context_object_name = "proyecto"
 
 
@@ -73,7 +73,7 @@ def buscar_proyecto(request):
     if nombre:
         Proyectos = Proyecto.objects.filter(nombre__icontains=nombre)
 
-    return render(request, 'appDeustotil_Tech/proyecto_buscar.html', {'proyectos': Proyectos})
+    return render(request, 'appDeustotil_Tech/proyectos/proyecto_buscar.html', {'proyectos': Proyectos})
 
 
 
@@ -83,13 +83,13 @@ def buscar_proyecto(request):
 # EMPLEADOS VIEWS
 class EmpleadoDetailView(DetailView):
     model = Empleado
-    template_name = "appDeustotil_Tech/empleado_detail.html"
+    template_name = "appDeustotil_Tech/empleados/empleado_detail.html"
     context_object_name = "empleado"
 
 
 class EmpleadoListView(ListView):
     model = Empleado
-    template_name = "appDeustotil_Tech/empleado_list.html"
+    template_name = "appDeustotil_Tech/empleados/empleado_list.html"
     context_object_name = "empleado"
 
 def buscar_empleado(request):
@@ -104,14 +104,14 @@ def buscar_empleado(request):
     elif apellido:
         empleados = Empleado.objects.filter(apellido__icontains=apellido)
 
-    return render(request, 'appDeustotil_Tech/empleado_buscar.html', {'empleados': empleados})
+    return render(request, 'appDeustotil_Tech/empleados/empleado_buscar.html', {'empleados': empleados})
 
 
 class EmpleadoCreateView(View):
     def get(self, request):
         formulario = EmpleadoForm()
         context = {"formulario": formulario}
-        return render(request, "appDeustotil_Tech/empleado_create.html", context)
+        return render(request, "appDeustotil_Tech/empleados/empleado_create.html", context)
 
     def post(self, request):
         formulario = EmpleadoForm(data=request.POST)
@@ -120,7 +120,7 @@ class EmpleadoCreateView(View):
             return redirect("index")
         return render(
             request,
-            "appDeustotil_Tech/empleado_create.html",
+            "appDeustotil_Tech/empleados/empleado_create.html",
             {"formulario": formulario},
         )
 
@@ -138,13 +138,13 @@ class EmpleadoCreateView(View):
 
 class TareaListView(ListView):
     model = Tarea
-    template_name = "appDeustotil_Tech/tarea_list.html"
+    template_name = "appDeustotil_Tech/tareas/tarea_list.html"
     context_object_name = "tarea"
 
 
 class TareaDetailView(DetailView):
     model = Tarea
-    template_name = "appDeustotil_Tech/tarea_detail.html"
+    template_name = "appDeustotil_Tech/tareas/tarea_detail.html"
     context_object_name = "tarea"
 
 
@@ -177,7 +177,7 @@ class TareaCreateView(View):
     def get(self, request):
         formulario = TareaForm()
         context = {"formulario": formulario}
-        return render(request, "appDeustotil_Tech/tarea_create.html", context)
+        return render(request, "appDeustotil_Tech/tareas/tarea_create.html", context)
 
     def post(self, request):
         formulario = TareaForm(data=request.POST)
@@ -186,7 +186,7 @@ class TareaCreateView(View):
             return redirect("index")
         return render(
             request,
-            "appDeustotil_Tech/tarea_create.html",
+            "appDeustotil_Tech/tareas/tarea_create.html",
             {"formulario": formulario},
         )
 
@@ -195,7 +195,7 @@ class ProyectoCreateView(View):
     def get(self, request):
         formulario = ProyectoForm()
         context = {"formulario": formulario}
-        return render(request, "appDeustotil_Tech/proyecto_create.html", context)
+        return render(request, "appDeustotil_Tech/proyectos/proyecto_create.html", context)
 
     def post(self, request):
         formulario = ProyectoForm(data=request.POST)
@@ -204,7 +204,7 @@ class ProyectoCreateView(View):
             return redirect("index")
         return render(
             request,
-            "appDeustotil_Tech/proyecto_create.html",
+            "appDeustotil_Tech/proyectos/proyecto_create.html",
             {"formulario": formulario},
         )
 
@@ -213,7 +213,7 @@ class ClienteCreateView(View):
     def get(self, request):
         formulario = ClienteForm()
         context = {"formulario": formulario}
-        return render(request, "appDeustotil_Tech/cliente_create.html", context)
+        return render(request, "appDeustotil_Tech/clientes/cliente_create.html", context)
 
     def post(self, request):
         formulario = ClienteForm(data=request.POST)
@@ -222,7 +222,7 @@ class ClienteCreateView(View):
             return redirect("index")
         return render(
             request,
-            "appDeustotil_Tech/cliente_create.html",
+            "appDeustotil_Tech/clientes/cliente_create.html",
             {"formulario": formulario},
         )
 
@@ -237,7 +237,7 @@ class ProyectoUpdateView(UpdateView):
             'formulario': formulario,
             'proyecto': proyecto
         }
-        return render(request, 'appDeustotil_Tech/proyecto_update.html', context)
+        return render(request, 'appDeustotil_Tech/proyectos/proyecto_update.html', context)
 
     def post(self, request, pk):
         proyecto = Proyecto.objects.get(id=pk)
@@ -247,7 +247,7 @@ class ProyectoUpdateView(UpdateView):
             return redirect('proyecto-show', proyecto.id)
         else:
             formulario = ProyectoForm(instance=proyecto)
-        return render(request, 'appDeustotil_Tech/proyecto_update.html', {'formulario': formulario})
+        return render(request, 'appDeustotil_Tech/proyectos/proyecto_update.html', {'formulario': formulario})
 
 
 class EmpleadoUpdateView(UpdateView):
@@ -258,9 +258,9 @@ class EmpleadoUpdateView(UpdateView):
         formulario = EmpleadoForm(instance=empleado)
         context = {
             'formulario': formulario,
-            'proyecto': empleado
+            'empleado': empleado
         }
-        return render(request, 'appDeustotil_Tech/empleado_update.html', context)
+        return render(request, 'appDeustotil_Tech/empleados/empleado_update.html', context)
 
     def post(self, request, pk):
         empleado = Empleado.objects.get(id=pk)
@@ -270,7 +270,7 @@ class EmpleadoUpdateView(UpdateView):
             return redirect('empleado-show', empleado.id)
         else:
             formulario = EmpleadoForm(instance=empleado)
-        return render(request, 'appDeustotil_Tech/empleado_update.html', {'formulario': formulario})
+        return render(request, 'appDeustotil_Tech/empleados/empleado_update.html', {'formulario': formulario})
 
 
 class TareaUpdateView(UpdateView):
@@ -283,7 +283,7 @@ class TareaUpdateView(UpdateView):
             'formulario': formulario,
             'tarea': tarea
         }
-        return render(request, 'appDeustotil_Tech/tarea_update.html', context)
+        return render(request, 'appDeustotil_Tech/tareas/tarea_update.html', context)
 
     def post(self, request, pk):
         tarea = Tarea.objects.get(id=pk)
@@ -293,7 +293,7 @@ class TareaUpdateView(UpdateView):
             return redirect('tarea-show', tarea.id)
         else:
             formulario = TareaForm(instance=tarea)
-        return render(request, 'appDeustotil_Tech/tarea_update.html', {'formulario': formulario})
+        return render(request, 'appDeustotil_Tech/tareas/tarea_update.html', {'formulario': formulario})
 
 class ProyectoDeleteView(DeleteView):
     model = Proyecto
