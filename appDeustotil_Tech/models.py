@@ -7,7 +7,7 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     telefono = models.IntegerField(max_length=100)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, null=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -26,7 +26,7 @@ class Empleado(models.Model):
     email = models.EmailField(max_length=100)
     telefono = models.IntegerField(max_length=100)
     imagen = models.CharField(max_length=300)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, null=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -47,7 +47,7 @@ class Proyecto(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, null=True, blank=True)
     jefe_proyecto = models.ForeignKey(Empleado, on_delete=models.CASCADE)
     imagen = models.CharField(max_length=300)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, null=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -85,7 +85,7 @@ class Tarea(models.Model):
     prioridad = models.CharField(max_length=100, choices=Prioridad.choices)
     estado = models.CharField(max_length=100, choices=Estado.choices)
     apuntes = models.CharField(max_length=100)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, null=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):

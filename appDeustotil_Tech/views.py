@@ -244,7 +244,7 @@ class ProyectoUpdateView(UpdateView):
         formulario = ProyectoForm(request.POST, instance=proyecto)
         if formulario.is_valid():
             formulario.save()
-            return redirect('proyecto-show', proyecto.id)
+            return redirect('proyecto-list')
         else:
             formulario = ProyectoForm(instance=proyecto)
         return render(request, 'appDeustotil_Tech/proyectos/proyecto_update.html', {'formulario': formulario})
@@ -267,7 +267,7 @@ class EmpleadoUpdateView(UpdateView):
         formulario = EmpleadoForm(request.POST, instance=empleado)
         if formulario.is_valid():
             formulario.save()
-            return redirect('empleado-show', empleado.id)
+            return redirect('empleado-list')
         else:
             formulario = EmpleadoForm(instance=empleado)
         return render(request, 'appDeustotil_Tech/empleados/empleado_update.html', {'formulario': formulario})
@@ -290,7 +290,7 @@ class TareaUpdateView(UpdateView):
         formulario = TareaForm(request.POST, instance=tarea)
         if formulario.is_valid():
             formulario.save()
-            return redirect('tarea-show', tarea.id)
+            return redirect('tarea-list')
         else:
             formulario = TareaForm(instance=tarea)
         return render(request, 'appDeustotil_Tech/tareas/tarea_update.html', {'formulario': formulario})
