@@ -1,10 +1,59 @@
 {% extends 'base.html' %}
 {% block contenido %}
+    
+    <div id="errorContainer"></div>
     <h2 class="titulo_create">Nueva tarea</h2>
-    <form class="nuevop" action="{% url 'tarea-create' %}" method="post">
+    
+    <!--La mejor forma de realizar una verificicación es mediante el *onsubmit*, ya que con el *onclick* pueden surgir fallos-->
+    <form class="nuevop" action="{% url 'tarea-create' %}" method="post" onsubmit="return Acceder()">
         {% csrf_token %}
         {{ formulario.errors }}
         {{ formulario.as_p }}
         <input type="submit" value="Nueva tarea"/>
     </form>
+    
+    <script>
+    
+           function Acceder(){
+          
+            let valid = true;
+            let errors = [];
+
+            //Asegurarnos que el nombre de la tarea no sea null y mande un mensaje de alert. Aun así, este posible error lo cubre Django autómaticamente
+               
+            const nombre = document.getElementById('id_nombre');
+            if (!nombre.value.trim()) {
+              valid = false;
+              errors.push('El título es obligatorio.');
+              alert('El nombre no puede ser nulo.');
+            }
+            
+            //Verificar que la descripción de la tarea sea menor que 10 y mande un mensaje de alert
+            
+            const descripcion = document.getElementById('id_descripcion');
+            console.log(descripcion)
+            if (descripcion.value.length < 10) {
+                    valid = false;
+                    console.log("es falso")
+                    errors.push('La descripción debe tener al menos 10 caracteres.');
+                    alert('La descripción debe tener al menos 10 caracteres.');
+            }
+
+           const errorContainer = document.getElementById('errorContainer');
+          errorContainer.innerHTML = '';
+           if (!valid) {
+            errors.forEach(function(error) {
+                const errorElement = document.createElement('div');
+                errorElement.className = 'error';
+                errorElement.textContent = error;
+                errorContainer.appendChild(errorElement);
+            });
+            return false; // Detener el envío del formulario
+        }
+        return true; // Permitir el envío del formulario si la validación pasa
+      }
+
+    </script>
 {% endblock %}
+
+
